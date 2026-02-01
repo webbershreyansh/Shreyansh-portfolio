@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyanh Raj Agrahari - Student Portfolio</title>
+    <link rel="icon" type="png" href="profile1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            line-height:1.6;
+            overflow-x: hidden;
+        }
+        /* Subtle Grid Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        /* Neon Glow Utility */
+        .glow {
+            box-shadow: 0 0 10px rgba(10, 150, 220, 0.5), 0 0 20px rgba(38, 160, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(43, 144, 226, 0.8), 0 0 40px rgba(43, 189, 226, 0.5);
+        }
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.5rem; }
+        p { font-size: 1rem; margin-bottom: 1rem; }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid #2bb1e2;
+            color: #2bb1e2;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #2ba8e2;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Hero Section */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            flex-wrap: wrap;
+        }
+        #hero .left {
+            flex: 1;
+            min-width: 300px;
+        }
+        #hero .right {
+            flex: 1;
+            text-align: center;
+            min-width: 300px;
+        }
+        #hero .profile-img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            /*object-fit: cover;*/
+            border: 6px solid #2bbae2;
+            box-shadow: 0 0 40px rgba(43, 195, 226, 0.5);
+            margin: 0 auto;
+            background: url('https://via.placeholder.com/200x200?text=Profile+Image') center/cover no-repeat;
+            transition: all 0.3s ease;
+        }
+        #hero .profile-img:hover {
+            box-shadow: 0 0 30px rgba(43, 168, 226, 0.8);
+            transform: scale(1.05);
+        }
+        /* About Section */
+        #about {
+            text-align: center;
+        }
+        /* Skills Section */
+        #skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(43, 202, 226, 0.3);
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(43, 208, 226, 0.2);
+        }
+        .progress-bar {
+            background: rgba(11, 135, 177, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2b99e2, #1aa4ce);
+            border-radius: 5px;
+            width: 80%; /* Adjust per skill */
+        }
+        /* Projects Section */
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: rgba(38, 169, 201, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(43, 183, 226, 0.3);
+            transition: all 0.3s ease;
+
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(24, 189, 218, 0.2);
+        }
+        /* Achievements & Education 
+        #achievements, #education {
+            text-align: center;
+        }
+        .achievement-item, .education-item {
+            background: rgba(14, 160, 189, 0.05);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            border: 1px solid rgba(43, 192, 226, 0.3);
+           
+
+        }*/
+        .achievement-item,
+.education-item {
+    background: rgba(14, 160, 189, 0.05);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid rgba(43, 192, 226, 0.3);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+/* trigger the transition */
+.achievement-item:hover,
+.education-item:hover {
+    transform: translateY(-6px);
+    background: rgba(14, 160, 189, 0.12);
+    box-shadow: 0 12px 30px rgba(14, 160, 189, 0.25);
+}
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(43, 198, 226, 0.3);
+            border-radius: 5px;
+            color: #e0e0e0;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2bb4e2;
+            box-shadow: 0 0 10px rgba(43, 174, 226, 0.5);
+        }
+        .social-icons {
+            margin-top: 2rem;
+        }
+        .social-icons a {
+            margin: 0 1rem;
+            color: #1a7fad;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #70bcda;
+            transform: scale(1.2);
+        }
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 { font-size: 2rem; }
+            section { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="left">
+            <h1>Hi, I am Shreyansh Raj Agrahari</h1>
+            <p>+2 Science Student (PCM) | Computer Science Enthusiast</p>
+            <p>I'm a passionate student with a keen interest in Physics, Mathematics, Programming, and emerging technologies. I love solving complex problems, coding innovative solutions, and exploring the frontiers of science and tech.</p>
+            <a href="portfoliocv.pdf" class="btn glow" download>Download CV</a>
+        </div>
+        <div class="right">
+            <!--div class="profile-img"></div-->
+            <img src=profile1.png alt="Profile" class="profile-img">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>As a +2 Science student specializing in Physics, Chemistry, and Mathematics with a focus on Computer Science, I thrive on blending theoretical knowledge with practical applications. My passion lies in problem-solving, coding, and staying ahead in technology trends, preparing me for a future in STEM fields.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <p>C, C++, Python(Basic), HTML, CSS, JavaScript</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-card">
+            <h3>Academic</h3>
+            <p>Physics, Mathematics, Logical Reasoning</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <p>MS Office, Canva, Git (Basic)</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+        </div>
+    
+        <div class="skill-card">
+            <h3>Hardwares</h3>
+            <p>Aurdino,Basic Electronics,Sensors</p>
+             <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>School Science Project</h3>
+            <p>A model demonstrating renewable energy concepts using basic electronics and recycled materials.</p>
+            <p><strong>Tech Used:</strong> Basic Electronics, Physics Principles</p>
+        </div>
+        <div class="project-card">
+            <h3>Mini Programming Project</h3>
+            <p>A simple calculator app built with Python, featuring basic arithmetic operations.</p>
+            <p><strong>Tech Used:</strong> Python</p>
+        </div>
+        <div class="project-card">
+            <h3>Website Presentation</h3>
+            <p>A responsive website for a school event, showcasing HTML, CSS, and JavaScript.</p>
+            <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <div class="achievement-item">
+            <h3>Math Olympiad Winner</h3>
+            <p>Secured 1st place in school-level Math Olympiad.</p>
+        </div>
+        <div class="achievement-item">
+            <h3>Science Exhibition Award</h3>
+            <p>Best Project Award for innovative physics model.</p>
+        </div>
+        <div class="achievement-item">
+            <h3>Coding Competition</h3>
+            <p>Participated and won certificate in regional coding challenge.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+         <div class="education-item">
+            <h3>Secondary Education Examination (SEE)</h3>
+            <p>Horizon GBS School</p>
+            <p>Graduation: 2081</p>
+        </div>
+        <div class="education-item">
+            <h3>+2 Science (PCM) with Computer Science</h3>
+            <p>New Horizon College(HGBSS)</p>
+            <p>Expected Graduation: 2083</p>
+        </div>
+    </section>
+
+   
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn glow">Send Message</button>
+        </form>
+        <p>Email: webbershreyansh@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank">LinkedIn</a>
+            <a href="https://github.com/webber-shreysnshr" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <script>
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent! (This is a demo; integrate with a service like Formspree for real functionality.)');
+        });
+    </script>
+</body>
+</html>

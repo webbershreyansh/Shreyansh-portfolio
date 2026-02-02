@@ -7,6 +7,29 @@
     <link rel="icon" type="png" href="profile1.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* Light Mode */
+body.light {
+  background: linear-gradient(135deg, #f4f4f4, #ffffff);
+  color: #111;
+}
+
+body.light section {
+  background: transparent;
+}
+
+body.light .skill-card,
+body.light .project-card,
+body.light .achievement-item,
+body.light .education-item {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+body.light .footer {
+  background: #f0f0f0;
+  color: #333;
+}
+
         /* Global Styles */
         * {
             margin: 0;
@@ -225,14 +248,41 @@
             transform: scale(1.2);
         }
         /* Responsiveness */
-        @media (max-width: 768px) {
-            #hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            h1 { font-size: 2rem; }
-            section { padding: 2rem 1rem; }
-        }
+       @media (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  section {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .profile-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .skill-card,
+  .project-card {
+    padding: 1.3rem;
+  }
+}
+
         .footer {
   text-align: center;
   padding: 20px 10px;
@@ -248,6 +298,10 @@
     </style>
 </head>
 <body>
+    <button id="themeToggle" class="btn glow" style="position:fixed; top:20px; right:20px; z-index:1000;">
+  🌙 Dark Mode
+</button>
+
     <!-- Hero Section -->
     <section id="hero">
         <div class="left">
@@ -265,14 +319,21 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>As a +2 Science student specializing in Physics, Chemistry, and Mathematics with a focus on Computer Science, I thrive on blending theoretical knowledge with practical applications. My passion lies in problem-solving, coding, and staying ahead in technology trends, preparing me for a future in STEM fields.</p>
+       <p>
+I am a motivated +2 Science (PCM) student with Computer Science, driven by curiosity and a strong problem-solving mindset.
+I enjoy transforming theoretical concepts from Physics and Mathematics into practical solutions through programming and experimentation.
+With a growing interest in software development and emerging technologies, I continuously work on improving my logical thinking,
+coding skills, and real-world application of knowledge. My goal is to build a strong foundation in STEM and contribute meaningfully
+to technology-driven solutions in the future.
+</p>
+
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
         <h2>Skills</h2>
         <div class="skill-card">
-            <h3>Programming</h3>
+            <h3>Programming Languages</h3>
             <p>C, C++, Python(Basic), HTML, CSS, JavaScript</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
         </div>
@@ -282,13 +343,13 @@
             <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
         </div>
         <div class="skill-card">
-            <h3>Tools</h3>
-            <p>MS Office, Canva, Git (Basic)</p>
+            <h3>Tools & Tech</h3>
+            <p>VS Code,GitHb,MS Office, Canva, Git (Basic)</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
     
         <div class="skill-card">
-            <h3>Hardwares</h3>
+            <h3>Tech-Aware</h3>
             <p>Aurdino,Basic Electronics,Sensors</p>
              <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
@@ -313,7 +374,19 @@
             <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
         </div>
     </section>
-
+<!-- Learning Now Section -->
+<section id="learning">
+    <h2>What I'm Learning Now</h2>
+    <div class="skill-card">
+        <h3>Currently Exploring</h3>
+        <ul style="list-style: none; padding-left: 0;">
+            <li>📘 JavaScript (DOM & Basics)</li>
+            <li>🌐 Web Development & Responsive Design</li>
+            <li>🧠 Data Structures (Basic)</li>
+            <li>⚙️ Git & GitHub (Version Control)</li>
+        </ul>
+    </div>
+</section>
     <!-- Achievements Section -->
     <section id="achievements">
         <h2>Achievements</h2>
@@ -355,7 +428,12 @@
             <textarea placeholder="Your Message" rows="5" required></textarea>
             <button type="submit" class="btn glow">Send Message</button>
         </form>
-        <p>Email: webbershreyansh@gmail.com</p>
+        <p>
+  Email: 
+  <a href="mailto:webbershreyansh@gmail.com" style="color:#2bb1e2; text-decoration:none;">
+    webbershreyansh@gmail.com
+  </a>
+</p>
         <div class="social-icons">
             <a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank">LinkedIn</a>
             <a href="https://github.com/webber-shreysnshr" target="_blank">GitHub</a>
@@ -379,6 +457,18 @@
             e.preventDefault();
             alert('Message sent!');
         });
+        <script>
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+
+  toggleBtn.textContent = document.body.classList.contains("light")
+    ? "☀️ Light Mode"
+    : "🌙 Dark Mode";
+});
+</script>
+
     </script>
 </body>
 </html>

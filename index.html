@@ -7,27 +7,23 @@
     <link rel="icon" type="png" href="profile1.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Light Mode */
-body.light {
-  background: linear-gradient(135deg, #f4f4f4, #ffffff);
+    body.light {
+  background: linear-gradient(135deg, #f5f7fa, #ffffff);
   color: #111;
-}
-
-body.light section {
-  background: transparent;
 }
 
 body.light .skill-card,
 body.light .project-card,
 body.light .achievement-item,
 body.light .education-item {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.06);
   border-color: rgba(0, 0, 0, 0.15);
 }
 
-body.light .footer {
-  background: #f0f0f0;
-  color: #333;
+body.light .glow {
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.25);
+}
+
 }
 
         /* Global Styles */
@@ -295,6 +291,41 @@ body.light .footer {
 .footer p {
   margin: 0;
 }
+/* Section Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Theme Transition Animation */
+body,
+section,
+.skill-card,
+.project-card,
+.achievement-item,
+.education-item,
+.footer {
+  transition:
+    background 0.6s ease,
+    background-color 0.6s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+#themeToggle {
+  transition: transform 0.5s ease, background 0.5s ease;
+}
+
+#themeToggle.spin {
+  transform: rotate(360deg) scale(1.05);
+}
+
+
     </style>
 </head>
 <body>
@@ -303,7 +334,7 @@ body.light .footer {
 </button>
 
     <!-- Hero Section -->
-    <section id="hero">
+    <section id="hero" class="reveal">
         <div class="left">
             <h1>Hi, I am Shreyansh Raj Agrahari</h1>
             <p>+2 Science Student (PCM) | Computer Science Enthusiast</p>
@@ -317,7 +348,8 @@ body.light .footer {
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="reveal">
+
         <h2>About Me</h2>
        <p>
 I am a motivated +2 Science (PCM) student with Computer Science, driven by curiosity and a strong problem-solving mindset.
@@ -330,7 +362,7 @@ to technology-driven solutions in the future.
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="reveal">
         <h2>Skills</h2>
         <div class="skill-card">
             <h3>Programming Languages</h3>
@@ -356,7 +388,7 @@ to technology-driven solutions in the future.
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="reveal">
         <h2>Projects</h2>
         <div class="project-card">
             <h3>School Science Project</h3>
@@ -375,7 +407,7 @@ to technology-driven solutions in the future.
         </div>
     </section>
 <!-- Learning Now Section -->
-<section id="learning">
+<section id="learning" class="reveal">
     <h2>What I'm Learning Now</h2>
     <div class="skill-card">
         <h3>Currently Exploring</h3>
@@ -388,7 +420,7 @@ to technology-driven solutions in the future.
     </div>
 </section>
     <!-- Achievements Section -->
-    <section id="achievements">
+    <section id="achievements" class="reveal">
         <h2>Achievements</h2>
         <div class="achievement-item">
             <h3>Math Olympiad Winner</h3>
@@ -405,7 +437,7 @@ to technology-driven solutions in the future.
     </section>
 
     <!-- Education Section -->
-    <section id="education">
+    <section id="education" class="reveal">
         <h2>Education</h2>
          <div class="education-item">
             <h3>Secondary Education Examination (SEE)</h3>
@@ -420,7 +452,7 @@ to technology-driven solutions in the future.
     </section>
 
    
-    <section id="contact">
+    <section id="contact" class="reveal">
         <h2>Contact Me</h2>
         <form id="contact-form">
             <input type="text" placeholder="Your Name" required>
@@ -457,19 +489,41 @@ to technology-driven solutions in the future.
             e.preventDefault();
             alert('Message sent!');
         });
-       
-
-    </script>
-        <script>
+     
+</script>
+  <script>
 const toggleBtn = document.getElementById("themeToggle");
 
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("light");
+
+  // Button animation
+  toggleBtn.classList.add("spin");
+  setTimeout(() => toggleBtn.classList.remove("spin"), 500);
 
   toggleBtn.textContent = document.body.classList.contains("light")
     ? "☀️ Light Mode"
     : "🌙 Dark Mode";
 });
 </script>
+
+    <script>
+const reveals = document.querySelectorAll(".reveal");
+
+const revealOnScroll = () => {
+  reveals.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight - 100;
+
+    if (sectionTop < triggerPoint) {
+      section.classList.add("active");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+
 </body>
 </html>

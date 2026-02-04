@@ -28,6 +28,16 @@ body.light .education-item {
 body.light .glow {
   box-shadow: 0 0 10px rgba(0, 120, 255, 0.25);
 }
+body.light .site-logo .logo-main {
+  color: #0b6ea1;
+}
+body.light .site-logo .logo-accent {
+  color: #0b0f1a;
+  opacity: 0.9;
+}
+body.light .site-logo::after {
+  background: linear-gradient(90deg, rgba(11, 110, 161, 0.9), rgba(255, 180, 80, 0.2));
+}
 
         /* Global Styles */
         * {
@@ -107,6 +117,38 @@ body.light .glow {
         }
         h3 { font-size: 1.5rem; }
         p { font-size: 1rem; margin-bottom: 1rem; }
+        .site-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.15rem;
+            letter-spacing: 0.22rem;
+            text-transform: uppercase;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.2rem;
+        }
+        .site-logo::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 70%;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, rgba(123, 230, 255, 0.95), rgba(43, 177, 226, 0.2));
+        }
+        .site-logo .logo-main {
+            color: #7be6ff;
+        }
+        .site-logo .logo-accent {
+            color: #e6f6ff;
+            opacity: 0.85;
+        }
+        .site-header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
         /* Buttons */
         .btn {
             display: inline-block;
@@ -378,6 +420,11 @@ section,
     </style>
 </head>
 <body>
+    <div class="site-header">
+        <div class="site-logo">
+            <span class="logo-main">Shrey</span><span class="logo-accent">ansh</span>
+        </div>
+    </div>
     <button id="themeToggle" class="btn glow" style="position:fixed; top:20px; right:20px; z-index:1000;">
   🌙 Dark Mode
 </button>

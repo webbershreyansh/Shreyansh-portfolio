@@ -337,6 +337,7 @@ body.light .site-logo::after {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    padding-top: 5.5rem;
   }
 
   h1 {
@@ -364,6 +365,20 @@ body.light .site-logo::after {
   .skill-card,
   .project-card {
     padding: 1.3rem;
+  }
+  .site-header {
+    top: 12px;
+    left: 12px;
+  }
+  .site-logo {
+    font-size: 0.95rem;
+    letter-spacing: 0.16rem;
+  }
+  #themeToggle {
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
   }
   body::before {
     opacity: 0.35;
@@ -409,6 +424,10 @@ section,
     border-color 0.4s ease;
 }
 #themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
   transition: transform 0.5s ease, background 0.5s ease;
 }
 
@@ -425,7 +444,7 @@ section,
             <span class="logo-main">Shrey</span><span class="logo-accent">ansh</span>
         </div>
     </div>
-    <button id="themeToggle" class="btn glow" style="position:fixed; top:20px; right:20px; z-index:1000;">
+    <button id="themeToggle" class="btn glow">
   🌙 Dark Mode
 </button>
 

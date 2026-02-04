@@ -6,6 +6,7 @@
     <title>Shreyanh Raj Agrahari</title>
     <link rel="icon" type="png" href="profile1.png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 body.light {
   background:
@@ -93,7 +94,17 @@ body.light .glow {
             font-weight: 700;
         }
         h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; position: relative; display: inline-block; }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60%;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, rgba(43, 177, 226, 0.9), rgba(138, 43, 226, 0.8));
+        }
         h3 { font-size: 1.5rem; }
         p { font-size: 1rem; margin-bottom: 1rem; }
         /* Buttons */
@@ -264,12 +275,19 @@ body.light .glow {
         .social-icons a {
             margin: 0 1rem;
             color: #1a7fad;
-            font-size: 2rem;
+            font-size: 1.6rem;
             transition: all 0.3s ease;
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            border: 1px solid rgba(43, 177, 226, 0.4);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            line-height: 1;
         }
         .social-icons a:hover {
             color: #70bcda;
             transform: scale(1.2);
+            background: rgba(43, 177, 226, 0.12);
         }
         /* Responsiveness */
        @media (max-width: 768px) {
@@ -304,6 +322,9 @@ body.light .glow {
   .skill-card,
   .project-card {
     padding: 1.3rem;
+  }
+  body::before {
+    opacity: 0.35;
   }
 }
 
@@ -404,13 +425,13 @@ to technology-driven solutions in the future.
         </div>
         <div class="skill-card">
             <h3>Tools & Tech</h3>
-            <p>VS Code,GitHb,MS Office, Canva, Git (Basic)</p>
+            <p>VS Code, GitHub, MS Office, Canva, Git (Basic)</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
     
         <div class="skill-card">
             <h3>Tech-Aware</h3>
-            <p>Aurdino,Basic Electronics,Sensors</p>
+            <p>Arduino, Basic Electronics, Sensors</p>
              <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
     </section>
@@ -495,8 +516,18 @@ to technology-driven solutions in the future.
   </a>
 </p>
         <div class="social-icons">
-            <a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank">LinkedIn</a>
-            <a href="https://github.com/webber-shreysnshr" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/webber-shreysnshr" target="_blank" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/shreyanshrajagrahari?igsh=OGIxNHU1Z2dxbTVs" target="_blank" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/3535shreyansh" target="_blank" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
         </div>
     </section>
 <footer class="footer">

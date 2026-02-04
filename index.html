@@ -117,6 +117,11 @@ body.light .site-logo::after {
         }
         h3 { font-size: 1.5rem; }
         p { font-size: 1rem; margin-bottom: 1rem; }
+        .icon-muted {
+            color: #7bdff5;
+            opacity: 0.85;
+            margin-right: 0.5rem;
+        }
         .site-logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.15rem;
@@ -288,6 +293,56 @@ body.light .site-logo::after {
     background: rgba(14, 160, 189, 0.12);
     box-shadow: 0 12px 30px rgba(14, 160, 189, 0.25);
 }
+        /* Education Timeline */
+        #education {
+            text-align: center;
+        }
+        .timeline {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(43, 177, 226, 0.9), rgba(138, 43, 226, 0.6));
+        }
+        .timeline-item {
+            position: relative;
+            text-align: left;
+            margin: 1.2rem 0 1.2rem 0.8rem;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            background: rgba(14, 160, 189, 0.05);
+            border: 1px solid rgba(43, 192, 226, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .timeline-item:hover {
+            transform: translateY(-6px);
+            background: rgba(14, 160, 189, 0.12);
+            box-shadow: 0 12px 30px rgba(14, 160, 189, 0.25);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.25rem;
+            top: 1rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2bb1e2;
+            box-shadow: 0 0 10px rgba(43, 177, 226, 0.7);
+        }
+        .timeline-item .time {
+            font-size: 0.95rem;
+            color: #8bd4f0;
+            margin-bottom: 0.3rem;
+        }
 
         /* Contact Section */
         #contact {
@@ -480,23 +535,23 @@ to technology-driven solutions in the future.
     <section id="skills" class="reveal">
         <h2>Skills</h2>
         <div class="skill-card">
-            <h3>Programming Languages</h3>
+            <h3><i class="fa-solid fa-code icon-muted"></i>Programming Languages</h3>
             <p>C, C++, Python(Basic), HTML, CSS, JavaScript</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
         </div>
         <div class="skill-card">
-            <h3>Academic</h3>
+            <h3><i class="fa-solid fa-book icon-muted"></i>Academic</h3>
             <p>Physics, Mathematics, Logical Reasoning</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
         </div>
         <div class="skill-card">
-            <h3>Tools & Tech</h3>
+            <h3><i class="fa-solid fa-screwdriver-wrench icon-muted"></i>Tools & Tech</h3>
             <p>VS Code, GitHub, MS Office, Canva, Git (Basic)</p>
             <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
     
         <div class="skill-card">
-            <h3>Tech-Aware</h3>
+            <h3><i class="fa-solid fa-microchip icon-muted"></i>Tech-Aware</h3>
             <p>Arduino, Basic Electronics, Sensors</p>
              <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
         </div>
@@ -527,10 +582,10 @@ to technology-driven solutions in the future.
     <div class="skill-card">
         <h3>Currently Exploring</h3>
         <ul style="list-style: none; padding-left: 0;">
-            <li>📘 JavaScript (DOM & Basics)</li>
-            <li>🌐 Web Development & Responsive Design</li>
-            <li>🧠 Data Structures (Basic)</li>
-            <li>⚙️ Git & GitHub (Version Control)</li>
+            <li><i class="fa-solid fa-code icon-muted"></i>JavaScript (DOM & Basics)</li>
+            <li><i class="fa-solid fa-globe icon-muted"></i>Web Development & Responsive Design</li>
+            <li><i class="fa-solid fa-brain icon-muted"></i>Data Structures (Basic)</li>
+            <li><i class="fa-solid fa-code-branch icon-muted"></i>Git & GitHub (Version Control)</li>
         </ul>
     </div>
 </section>
@@ -554,15 +609,22 @@ to technology-driven solutions in the future.
     <!-- Education Section -->
     <section id="education" class="reveal">
         <h2>Education</h2>
-         <div class="education-item">
-            <h3>Secondary Education Examination (SEE)</h3>
-            <p>Horizon GBS School</p>
-            <p>Graduation: 2081</p>
-        </div>
-        <div class="education-item">
-            <h3>+2 Science (PCM) with Computer Science</h3>
-            <p>New Horizon College(HGBSS)</p>
-            <p>Expected Graduation: 2083</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">2067-2077</div>
+                <h3>Nursery-Grade 7</h3>
+                <p>Shree Siddhartha Vidya Mandir HSEB School,Kapilvastu</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time">2081</div>
+                <h3>Secondary Education Examination (SEE)</h3>
+                <p>Horizon GBS School,Tilotamma</p>
+            </div>
+            <div class="timeline-item">
+                <div class="time">2083 (Expected)</div>
+                <h3>+2 Science (PCM) with Computer Science</h3>
+                <p>New Horizon College (HGBSS),Tilotamma</p>
+            </div>
         </div>
     </section>
 
@@ -570,11 +632,12 @@ to technology-driven solutions in the future.
     <section id="contact" class="reveal">
         <h2>Contact Me</h2>
         <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <input type="text" name="from_name" placeholder="Your Name" required>
+            <input type="email" name="from_email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit" class="btn glow">Send Message</button>
         </form>
+        <p id="form-status" style="margin-top:0.6rem; font-size:0.95rem; color:#7be6ff;"></p>
         <p>
   Email: 
   <a href="mailto:webbershreyansh@gmail.com" style="color:#2bb1e2; text-decoration:none;">
@@ -599,8 +662,10 @@ to technology-driven solutions in the future.
 <footer class="footer">
   <p>©️ 2026 Shreyansh Raj Agrahari | Built with ❤️ by me</p>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        
+        emailjs.init("7Jo_3LJgp6PY9gz8g");
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -610,9 +675,29 @@ to technology-driven solutions in the future.
             });
         });
 
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('form-status');
+
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Message sent!');
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            statusEl.textContent = 'Sending your message...';
+
+            emailjs.sendForm('service_y9waaf6', 'template_tkorcow', this)
+                .then(() => {
+                    statusEl.textContent = 'Message sent successfully.';
+                    this.reset();
+                })
+                .catch(() => {
+                    statusEl.textContent = 'Message failed. Please try again.';
+                })
+                .finally(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                });
         });
      
 </script>

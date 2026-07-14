@@ -802,6 +802,217 @@
       font-size: 0.62rem;
     }
 
+    .ledger-lab {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.5rem, 4vw, 3.3rem);
+      border: 1px solid rgba(140, 221, 176, 0.25);
+      border-radius: 1.3rem;
+      background:
+        linear-gradient(135deg, rgba(240, 196, 90, 0.1), transparent 40%),
+        linear-gradient(325deg, rgba(89, 196, 142, 0.1), transparent 36%),
+        rgba(13, 43, 41, 0.64);
+      box-shadow: var(--shadow);
+    }
+
+    .ledger-lab::before {
+      position: absolute;
+      top: -3rem;
+      right: -2rem;
+      width: 16rem;
+      aspect-ratio: 1;
+      content: "";
+      border: 1px solid rgba(240, 196, 90, 0.17);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2.8rem rgba(240, 196, 90, 0.025);
+      pointer-events: none;
+    }
+
+    .ledger-lab-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ledger-lab-head h3 {
+      margin-top: 0.55rem;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .ledger-lab-head p {
+      max-width: 28rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .ledger-equation {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      background: rgba(7, 23, 22, 0.3);
+      font-family: "DM Mono", monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .ledger-workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(230px, 0.55fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--line);
+    }
+
+    .ledger-fields,
+    .ledger-result {
+      padding: clamp(1.15rem, 3vw, 1.65rem);
+      background: rgba(6, 26, 25, 0.48);
+    }
+
+    .ledger-fields {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .ledger-field {
+      display: grid;
+      grid-template-columns: 1.15fr minmax(8rem, 0.85fr);
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ledger-field label {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .ledger-field label span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--green);
+      font-family: "DM Mono", monospace;
+      font-size: 0.61rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ledger-input {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 0.62rem;
+      background: rgba(0, 0, 0, 0.14);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ledger-input:focus-within {
+      border-color: rgba(240, 196, 90, 0.66);
+      box-shadow: 0 0 0 4px rgba(240, 196, 90, 0.08);
+    }
+
+    .ledger-input span {
+      padding: 0.62rem 0 0.62rem 0.68rem;
+      color: var(--gold);
+      font-family: "DM Mono", monospace;
+      font-size: 0.68rem;
+    }
+
+    .ledger-input input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: 0;
+      color: var(--ink);
+      background: transparent;
+      padding: 0.62rem 0.68rem 0.62rem 0.42rem;
+      font-family: "DM Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    .ledger-result {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      background:
+        radial-gradient(circle at 78% 10%, rgba(240, 196, 90, 0.12), transparent 10rem),
+        rgba(15, 48, 45, 0.72);
+    }
+
+    .ledger-status {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 0.45rem;
+      padding: 0.42rem 0.62rem;
+      border: 1px solid rgba(140, 221, 176, 0.34);
+      border-radius: 999px;
+      color: var(--green);
+      background: rgba(140, 221, 176, 0.08);
+      font-family: "DM Mono", monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .ledger-status.is-unbalanced {
+      border-color: rgba(240, 196, 90, 0.5);
+      color: var(--gold-soft);
+      background: rgba(240, 196, 90, 0.1);
+    }
+
+    .ledger-status i {
+      font-size: 0.64rem;
+    }
+
+    .ledger-result strong {
+      display: block;
+      margin-top: 1rem;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .ledger-result p {
+      margin-top: 0.55rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .ledger-reset {
+      align-self: flex-start;
+      padding: 0;
+      color: var(--gold-soft);
+      background: transparent;
+      cursor: pointer;
+      font-family: "DM Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .ledger-reset:hover {
+      color: var(--green);
+    }
+
     .achievement-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1034,6 +1245,22 @@
       background: rgba(255, 255, 255, 0.64);
     }
 
+    body.light .ledger-lab {
+      background:
+        linear-gradient(135deg, rgba(240, 196, 90, 0.16), transparent 40%),
+        linear-gradient(325deg, rgba(89, 196, 142, 0.12), transparent 36%),
+        rgba(255, 255, 255, 0.73);
+    }
+
+    body.light .ledger-fields,
+    body.light .ledger-result {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    body.light .ledger-input {
+      background: rgba(255, 255, 255, 0.82);
+    }
+
     body.light .field input:focus,
     body.light .field textarea:focus {
       background: #fff;
@@ -1051,7 +1278,8 @@
       .hero,
       .manifesto,
       .journey-layout,
-      .contact-panel {
+      .contact-panel,
+      .ledger-workspace {
         grid-template-columns: 1fr;
       }
 
@@ -1311,10 +1539,56 @@
       </div>
     </section>
 
+    <section class="section shell" id="ledger-lab">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">02 / Ledger Lab</span>
+          <h2>Accounting, made tangible.</h2>
+        </div>
+        <p class="section-copy">A small interactive exercise based on the accounting equation. Change the numbers and see whether the balance sheet holds.</p>
+      </div>
+
+      <div class="ledger-lab reveal">
+        <div class="ledger-lab-head">
+          <div>
+            <span class="section-kicker">Try the equation</span>
+            <h3>A balance sheet must balance.</h3>
+          </div>
+          <span class="ledger-equation">Assets = Liabilities + Equity</span>
+        </div>
+
+        <div class="ledger-workspace">
+          <div class="ledger-fields">
+            <div class="ledger-field">
+              <label for="ledger-assets">Total assets<span>What the business owns</span></label>
+              <div class="ledger-input"><span>NPR</span><input id="ledger-assets" type="number" min="0" step="1000" value="100000"></div>
+            </div>
+            <div class="ledger-field">
+              <label for="ledger-liabilities">Total liabilities<span>What the business owes</span></label>
+              <div class="ledger-input"><span>NPR</span><input id="ledger-liabilities" type="number" min="0" step="1000" value="60000"></div>
+            </div>
+            <div class="ledger-field">
+              <label for="ledger-equity">Owner&apos;s equity<span>Owner&apos;s claim</span></label>
+              <div class="ledger-input"><span>NPR</span><input id="ledger-equity" type="number" min="0" step="1000" value="40000"></div>
+            </div>
+          </div>
+
+          <div class="ledger-result">
+            <div>
+              <span class="ledger-status" id="ledger-status"><i class="fa-solid fa-check" aria-hidden="true"></i>Balanced</span>
+              <strong id="ledger-total">NPR 100,000</strong>
+              <p id="ledger-message">Assets equal liabilities plus owner&apos;s equity.</p>
+            </div>
+            <button class="ledger-reset" id="ledger-reset" type="button">Reset example <i class="fa-solid fa-rotate-left" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section shell" id="journey">
       <div class="section-heading reveal">
         <div>
-          <span class="section-kicker">02 / Education</span>
+          <span class="section-kicker">03 / Education</span>
           <h2>My learning ledger.</h2>
         </div>
         <p class="section-copy">Each stage has added a different kind of curiosity - from early learning, to science, to CA.</p>
@@ -1361,7 +1635,7 @@
     <section class="section shell" id="work">
       <div class="section-heading reveal">
         <div>
-          <span class="section-kicker">03 / Work & Experiments</span>
+          <span class="section-kicker">04 / Work & Experiments</span>
           <h2>Small projects. Serious curiosity.</h2>
         </div>
         <p class="section-copy">A collection of practical work that shows how I learn by making, testing, and explaining.</p>
@@ -1414,7 +1688,7 @@
     <section class="section shell" id="achievements">
       <div class="section-heading reveal">
         <div>
-          <span class="section-kicker">04 / Milestones</span>
+          <span class="section-kicker">05 / Milestones</span>
           <h2>Proof of the habit.</h2>
         </div>
       </div>
@@ -1441,7 +1715,7 @@
     <section class="section shell" id="contact">
       <div class="contact-panel reveal">
         <div>
-          <span class="section-kicker">05 / Contact</span>
+          <span class="section-kicker">06 / Contact</span>
           <h2>Let&apos;s start a conversation.</h2>
           <p>Whether it is about CA, finance, technology, or an idea worth discussing, I&apos;d be glad to hear from you.</p>
           <div class="contact-details">
@@ -1525,6 +1799,49 @@
     document.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
       revealObserver.observe(element);
     });
+
+    const ledgerAssets = document.getElementById("ledger-assets");
+    const ledgerLiabilities = document.getElementById("ledger-liabilities");
+    const ledgerEquity = document.getElementById("ledger-equity");
+    const ledgerStatus = document.getElementById("ledger-status");
+    const ledgerTotal = document.getElementById("ledger-total");
+    const ledgerMessage = document.getElementById("ledger-message");
+    const ledgerReset = document.getElementById("ledger-reset");
+
+    if (ledgerAssets && ledgerLiabilities && ledgerEquity) {
+      const defaults = { assets: 100000, liabilities: 60000, equity: 40000 };
+      const currency = new Intl.NumberFormat("en-NP", { maximumFractionDigits: 0 });
+
+      const updateLedger = () => {
+        const assets = Number(ledgerAssets.value) || 0;
+        const liabilities = Number(ledgerLiabilities.value) || 0;
+        const equity = Number(ledgerEquity.value) || 0;
+        const difference = assets - liabilities - equity;
+        const isBalanced = Math.abs(difference) < 0.01;
+
+        ledgerTotal.textContent = `NPR ${currency.format(assets)}`;
+        ledgerStatus.classList.toggle("is-unbalanced", !isBalanced);
+        ledgerStatus.innerHTML = isBalanced
+          ? '<i class="fa-solid fa-check" aria-hidden="true"></i>Balanced'
+          : '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Needs adjustment';
+        ledgerMessage.textContent = isBalanced
+          ? "Assets equal liabilities plus owner\'s equity."
+          : `Difference: NPR ${currency.format(Math.abs(difference))}. Adjust the values to balance the equation.`;
+      };
+
+      [ledgerAssets, ledgerLiabilities, ledgerEquity].forEach((input) => {
+        input.addEventListener("input", updateLedger);
+      });
+
+      ledgerReset.addEventListener("click", () => {
+        ledgerAssets.value = defaults.assets;
+        ledgerLiabilities.value = defaults.liabilities;
+        ledgerEquity.value = defaults.equity;
+        updateLedger();
+      });
+
+      updateLedger();
+    }
 
     if (window.emailjs) {
       emailjs.init("7Jo_3LJgp6PY9gz8g");

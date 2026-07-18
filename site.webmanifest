@@ -1,0 +1,12 @@
+{
+  "name": "Shreyansh Raj Agrahari | Portfolio",
+  "short_name": "Shreyansh",
+  "description": "A portfolio built around finance, technology, and disciplined learning.",
+  "start_url": "./portfolio.html",
+  "display": "standalone",
+  "background_color": "#071716",
+  "theme_color": "#071716",
+  "icons": [
+    { "src": "profile1.png", "sizes": "517x483", "type": "image/png", "purpose": "any" }
+  ]
+}

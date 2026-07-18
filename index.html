@@ -1,1432 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#102625">
-  <meta name="description" content="Shreyansh Raj Agrahari - CA student at Academy of Commerce CA, Kathmandu, following the ICAI curriculum.">
-  <title>Shreyansh Raj Agrahari | CA Student</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071716">
+  <meta name="description" content="The portfolio of Shreyansh Raj Agrahari, a CA student in Kathmandu combining accounting discipline with technology curiosity.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shreyansh Raj Agrahari | Finance + Technology">
+  <meta property="og:description" content="A CA student's portfolio, built around finance, technology, and disciplined learning.">
+  <meta property="og:image" content="profile1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shreyansh Raj Agrahari | Finance + Technology">
+  <meta name="twitter:description" content="A CA student's portfolio, built around finance, technology, and disciplined learning.">
+  <link rel="canonical" href="portfolio.html">
   <link rel="icon" type="image/png" href="profile1.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <style>
-    :root {
-      --ink: #eff5ed;
-      --muted: #afc3bd;
-      --background: #102625;
-      --background-deep: #071716;
-      --surface: rgba(19, 51, 49, 0.62);
-      --surface-strong: #173e3a;
-      --line: rgba(211, 236, 221, 0.14);
-      --green: #8cddb0;
-      --green-deep: #36a878;
-      --gold: #f0c45a;
-      --gold-soft: #ffe6a1;
-      --shadow: 0 24px 60px rgba(1, 12, 11, 0.3);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-width: 320px;
-      overflow-x: hidden;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(74, 193, 139, 0.18), transparent 30rem),
-        radial-gradient(circle at 92% 24%, rgba(240, 196, 90, 0.12), transparent 28rem),
-        linear-gradient(135deg, var(--background-deep), var(--background) 52%, #0c2021);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.55;
-      transition: background 0.45s ease, color 0.45s ease;
-    }
-
-    body::before {
-      position: fixed;
-      z-index: -2;
-      inset: 0;
-      content: "";
-      background-image:
-        linear-gradient(rgba(195, 237, 212, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(195, 237, 212, 0.045) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.92), transparent 84%);
-      pointer-events: none;
-    }
-
-    body::after {
-      position: fixed;
-      z-index: -3;
-      inset: -20%;
-      content: "";
-      background:
-        radial-gradient(30% 34% at 20% 35%, rgba(68, 177, 131, 0.15), transparent 72%),
-        radial-gradient(34% 31% at 76% 62%, rgba(241, 194, 88, 0.11), transparent 72%);
-      filter: blur(30px);
-      animation: atmosphere 18s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-
-    @keyframes atmosphere {
-      from { transform: translate3d(-2%, -1%, 0) scale(1); }
-      to { transform: translate3d(2%, 2%, 0) scale(1.08); }
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    button {
-      border: 0;
-    }
-
-    .shell {
-      width: min(1180px, calc(100% - 3rem));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: fixed;
-      z-index: 10;
-      top: 0;
-      right: 0;
-      left: 0;
-      border-bottom: 1px solid transparent;
-      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
-    }
-
-    .site-header.is-scrolled {
-      border-color: var(--line);
-      background: rgba(7, 23, 22, 0.74);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 78px;
-      gap: 1rem;
-    }
-
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      color: var(--ink);
-      font-family: "DM Mono", monospace;
-      font-size: 0.94rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .wordmark-mark {
-      display: grid;
-      width: 1.9rem;
-      height: 1.9rem;
-      place-items: center;
-      border: 1px solid rgba(240, 196, 90, 0.76);
-      border-radius: 50%;
-      color: var(--gold);
-      font-size: 0.72rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-soft);
-    }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.6rem;
-      height: 2.6rem;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--gold-soft);
-      background: rgba(255, 255, 255, 0.03);
-      cursor: pointer;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-    }
-
-    .theme-toggle:hover {
-      border-color: rgba(240, 196, 90, 0.66);
-      background: rgba(240, 196, 90, 0.1);
-      transform: rotate(12deg);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-      min-height: 100svh;
-      align-items: center;
-      gap: clamp(2.5rem, 7vw, 7rem);
-      padding-top: 7.4rem;
-      padding-bottom: 4rem;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      margin-bottom: 1.55rem;
-      color: var(--green);
-      font-family: "DM Mono", monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      width: 2.2rem;
-      height: 1px;
-      content: "";
-      background: var(--green);
-    }
-
-    h1,
-    h2,
-    h3 {
-      text-wrap: balance;
-    }
-
-    h1 {
-      max-width: 760px;
-      font-family: "Fraunces", serif;
-      font-size: clamp(3.35rem, 7.4vw, 6.6rem);
-      font-weight: 600;
-      letter-spacing: -0.065em;
-      line-height: 0.94;
-    }
-
-    h1 em {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .hero-intro {
-      max-width: 650px;
-      margin-top: 1.8rem;
-      color: var(--muted);
-      font-size: clamp(1.02rem, 1.5vw, 1.18rem);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.85rem;
-      margin-top: 2.25rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      min-height: 3.1rem;
-      padding: 0.74rem 1.15rem;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    .button-primary {
-      color: #102625;
-      background: var(--gold);
-      box-shadow: 0 12px 24px rgba(240, 196, 90, 0.15);
-    }
-
-    .button-primary:hover {
-      background: #ffe09a;
-      box-shadow: 0 16px 30px rgba(240, 196, 90, 0.25);
-    }
-
-    .button-ghost {
-      border-color: var(--line);
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.025);
-    }
-
-    .button-ghost:hover {
-      border-color: rgba(140, 221, 176, 0.55);
-      background: rgba(140, 221, 176, 0.09);
-    }
-
-    .hero-notes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem 1.25rem;
-      margin-top: 2.5rem;
-      color: var(--muted);
-      font-family: "DM Mono", monospace;
-      font-size: 0.67rem;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-notes span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.44rem;
-    }
-
-    .hero-notes i {
-      color: var(--gold);
-    }
-
-    .portrait-stage {
-      position: relative;
-      width: min(100%, 420px);
-      margin-inline: auto;
-      aspect-ratio: 0.86;
-    }
-
-    .portrait-stage::before,
-    .portrait-stage::after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      border-radius: 50%;
-    }
-
-    .portrait-stage::before {
-      top: 6%;
-      right: -8%;
-      width: 82%;
-      aspect-ratio: 1;
-      border: 1px solid rgba(240, 196, 90, 0.55);
-    }
-
-    .portrait-stage::after {
-      bottom: 1%;
-      left: -11%;
-      width: 66%;
-      aspect-ratio: 1;
-      border: 1px solid rgba(140, 221, 176, 0.4);
-    }
-
-    .portrait-frame {
-      position: absolute;
-      inset: 7% 5% 4% 8%;
-      overflow: hidden;
-      border: 1px solid rgba(232, 249, 237, 0.28);
-      border-radius: 47% 47% 12% 12% / 38% 38% 9% 9%;
-      background: linear-gradient(155deg, rgba(140, 221, 176, 0.16), rgba(240, 196, 90, 0.08));
-      box-shadow: var(--shadow);
-    }
-
-    .portrait-frame::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background: linear-gradient(180deg, transparent 45%, rgba(7, 23, 22, 0.28));
-      pointer-events: none;
-    }
-
-    .portrait-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: saturate(0.88) contrast(1.04);
-      transform: scale(1.02);
-    }
-
-    .portrait-tag {
-      position: absolute;
-      z-index: 1;
-      right: -3%;
-      bottom: 9%;
-      width: 11.2rem;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(232, 249, 237, 0.17);
-      border-radius: 0.85rem;
-      background: rgba(14, 42, 40, 0.76);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-    }
-
-    .portrait-tag strong,
-    .portrait-tag span {
-      display: block;
-    }
-
-    .portrait-tag strong {
-      color: var(--gold-soft);
-      font-family: "DM Mono", monospace;
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .portrait-tag span {
-      margin-top: 0.24rem;
-      color: var(--muted);
-      font-size: 0.76rem;
-    }
-
-    .scroll-cue {
-      position: absolute;
-      bottom: 1.9rem;
-      left: 50%;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      color: rgba(175, 195, 189, 0.72);
-      font-family: "DM Mono", monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transform: translateX(-50%);
-    }
-
-    .scroll-cue i {
-      color: var(--gold);
-      animation: bounce 1.7s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(4px); }
-    }
-
-    .ticker {
-      overflow: hidden;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .ticker-track {
-      display: flex;
-      width: max-content;
-      animation: ticker 30s linear infinite;
-    }
-
-    .ticker-group {
-      display: flex;
-      align-items: center;
-      flex: 0 0 auto;
-      gap: 1.15rem;
-      padding: 0.78rem 1.15rem;
-      color: var(--muted);
-      font-family: "DM Mono", monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .ticker-group i {
-      color: var(--gold);
-      font-size: 0.42rem;
-    }
-
-    @keyframes ticker {
-      to { transform: translateX(-50%); }
-    }
-
-    .section {
-      padding: clamp(5rem, 10vw, 8.5rem) 0;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-bottom: 2.8rem;
-    }
-
-    .section-kicker {
-      display: block;
-      margin-bottom: 0.72rem;
-      color: var(--green);
-      font-family: "DM Mono", monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      max-width: 760px;
-      font-family: "Fraunces", serif;
-      font-size: clamp(2.35rem, 4.8vw, 4.45rem);
-      font-weight: 600;
-      letter-spacing: -0.055em;
-      line-height: 0.98;
-    }
-
-    .section-copy {
-      max-width: 410px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .manifesto {
-      display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: clamp(2rem, 7vw, 6rem);
-      align-items: start;
-    }
-
-    .manifesto-statement {
-      position: sticky;
-      top: 8rem;
-      padding: 1.8rem 0 0 1.45rem;
-      border-left: 1px solid var(--gold);
-      color: var(--gold-soft);
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.6rem, 2.5vw, 2.25rem);
-      letter-spacing: -0.035em;
-      line-height: 1.15;
-    }
-
-    .manifesto-text {
-      color: var(--muted);
-      font-size: clamp(1.08rem, 1.65vw, 1.22rem);
-    }
-
-    .manifesto-text p + p {
-      margin-top: 1.2rem;
-    }
-
-    .skill-rail {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin-top: 3.25rem;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-      background: var(--line);
-    }
-
-    .skill-card {
-      min-height: 13.5rem;
-      padding: 1.55rem;
-      background: rgba(14, 42, 40, 0.68);
-      transition: background 0.25s ease, transform 0.25s ease;
-    }
-
-    .skill-card:hover {
-      background: rgba(28, 67, 61, 0.88);
-    }
-
-    .skill-icon {
-      display: grid;
-      width: 2.4rem;
-      height: 2.4rem;
-      place-items: center;
-      border: 1px solid rgba(240, 196, 90, 0.35);
-      border-radius: 50%;
-      color: var(--gold);
-    }
-
-    .skill-card h3 {
-      margin-top: 2.3rem;
-      font-size: 1.08rem;
-    }
-
-    .skill-card p {
-      margin-top: 0.48rem;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .journey-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: clamp(2rem, 7vw, 6rem);
-      align-items: start;
-    }
-
-    .timeline {
-      position: relative;
-      margin-left: 0.65rem;
-      padding-left: clamp(2.2rem, 5vw, 4.3rem);
-    }
-
-    .timeline::before {
-      position: absolute;
-      top: 0.5rem;
-      bottom: 0.5rem;
-      left: 0;
-      width: 1px;
-      content: "";
-      background: linear-gradient(var(--gold), var(--green-deep), rgba(54, 168, 120, 0.08));
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 0 0 2.55rem;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      position: absolute;
-      top: 0.42rem;
-      left: calc(-1 * clamp(2.2rem, 5vw, 4.3rem) - 0.36rem);
-      width: 0.72rem;
-      height: 0.72rem;
-      content: "";
-      border: 2px solid var(--background);
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 4px rgba(140, 221, 176, 0.12);
-    }
-
-    .timeline-item.is-current::before {
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(240, 196, 90, 0.13);
-    }
-
-    .timeline-date {
-      display: block;
-      margin-bottom: 0.35rem;
-      color: var(--green);
-      font-family: "DM Mono", monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .timeline-item h3 {
-      font-size: clamp(1.16rem, 2vw, 1.38rem);
-    }
-
-    .timeline-item p {
-      max-width: 560px;
-      margin-top: 0.42rem;
-      color: var(--muted);
-    }
-
-    .journey-aside {
-      padding: 1.55rem;
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-      background:
-        linear-gradient(145deg, rgba(240, 196, 90, 0.09), transparent 45%),
-        rgba(14, 42, 40, 0.56);
-      box-shadow: var(--shadow);
-    }
-
-    .journey-aside .aside-label {
-      color: var(--gold-soft);
-      font-family: "DM Mono", monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .journey-aside h3 {
-      margin-top: 1rem;
-      font-family: "Fraunces", serif;
-      font-size: 1.9rem;
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      line-height: 1.04;
-    }
-
-    .learning-list {
-      margin-top: 1.65rem;
-      list-style: none;
-    }
-
-    .learning-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0.68rem 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .learning-list li:last-child {
-      border-bottom: 0;
-    }
-
-    .learning-list i {
-      width: 1rem;
-      color: var(--gold);
-      font-size: 0.78rem;
-      text-align: center;
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
-    }
-
-    .work-card {
-      position: relative;
-      min-height: 20rem;
-      overflow: hidden;
-      padding: 1.6rem;
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-      background: rgba(14, 42, 40, 0.56);
-      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    }
-
-    .work-card:hover {
-      border-color: rgba(240, 196, 90, 0.38);
-      background: rgba(26, 65, 60, 0.82);
-      transform: translateY(-6px);
-    }
-
-    .work-card.featured {
-      grid-column: span 7;
-      background:
-        radial-gradient(circle at 88% 18%, rgba(240, 196, 90, 0.22), transparent 13rem),
-        linear-gradient(145deg, rgba(44, 110, 85, 0.52), rgba(14, 42, 40, 0.65));
-    }
-
-    .work-card.compact {
-      grid-column: span 5;
-    }
-
-    .work-card::after {
-      position: absolute;
-      right: -1.2rem;
-      bottom: -4rem;
-      color: rgba(240, 196, 90, 0.09);
-      font-family: "Fraunces", serif;
-      font-size: 12rem;
-      font-weight: 700;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .work-card.featured::after { content: "01"; }
-    .work-card:nth-child(2)::after { content: "02"; }
-    .work-card:nth-child(3)::after { content: "03"; }
-
-    .work-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      color: var(--green);
-      font-family: "DM Mono", monospace;
-      font-size: 0.67rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .work-card h3 {
-      position: relative;
-      z-index: 1;
-      max-width: 28rem;
-      margin-top: 4rem;
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 600;
-      letter-spacing: -0.045em;
-      line-height: 1.03;
-    }
-
-    .work-card.compact h3 {
-      font-size: clamp(1.45rem, 2.3vw, 2rem);
-    }
-
-    .work-card p {
-      position: relative;
-      z-index: 1;
-      max-width: 30rem;
-      margin-top: 0.9rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .work-tags {
-      position: absolute;
-      z-index: 1;
-      right: 1.5rem;
-      bottom: 1.4rem;
-      left: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-    }
-
-    .work-tags span {
-      padding: 0.32rem 0.5rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(8, 27, 26, 0.24);
-      font-family: "DM Mono", monospace;
-      font-size: 0.62rem;
-    }
-
-    .ledger-lab {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(1.5rem, 4vw, 3.3rem);
-      border: 1px solid rgba(140, 221, 176, 0.25);
-      border-radius: 1.3rem;
-      background:
-        linear-gradient(135deg, rgba(240, 196, 90, 0.1), transparent 40%),
-        linear-gradient(325deg, rgba(89, 196, 142, 0.1), transparent 36%),
-        rgba(13, 43, 41, 0.64);
-      box-shadow: var(--shadow);
-    }
-
-    .ledger-lab::before {
-      position: absolute;
-      top: -3rem;
-      right: -2rem;
-      width: 16rem;
-      aspect-ratio: 1;
-      content: "";
-      border: 1px solid rgba(240, 196, 90, 0.17);
-      border-radius: 50%;
-      box-shadow: inset 0 0 0 2.8rem rgba(240, 196, 90, 0.025);
-      pointer-events: none;
-    }
-
-    .ledger-lab-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .ledger-lab-head h3 {
-      margin-top: 0.55rem;
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 600;
-      letter-spacing: -0.045em;
-      line-height: 1;
-    }
-
-    .ledger-lab-head p {
-      max-width: 28rem;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .ledger-equation {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.5rem 0.7rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--gold-soft);
-      background: rgba(7, 23, 22, 0.3);
-      font-family: "DM Mono", monospace;
-      font-size: 0.67rem;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .ledger-workspace {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(230px, 0.55fr);
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-      background: var(--line);
-    }
-
-    .ledger-fields,
-    .ledger-result {
-      padding: clamp(1.15rem, 3vw, 1.65rem);
-      background: rgba(6, 26, 25, 0.48);
-    }
-
-    .ledger-fields {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .ledger-field {
-      display: grid;
-      grid-template-columns: 1.15fr minmax(8rem, 0.85fr);
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .ledger-field label {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .ledger-field label span {
-      display: block;
-      margin-top: 0.15rem;
-      color: var(--green);
-      font-family: "DM Mono", monospace;
-      font-size: 0.61rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .ledger-input {
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 0.62rem;
-      background: rgba(0, 0, 0, 0.14);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .ledger-input:focus-within {
-      border-color: rgba(240, 196, 90, 0.66);
-      box-shadow: 0 0 0 4px rgba(240, 196, 90, 0.08);
-    }
-
-    .ledger-input span {
-      padding: 0.62rem 0 0.62rem 0.68rem;
-      color: var(--gold);
-      font-family: "DM Mono", monospace;
-      font-size: 0.68rem;
-    }
-
-    .ledger-input input {
-      width: 100%;
-      min-width: 0;
-      border: 0;
-      outline: 0;
-      color: var(--ink);
-      background: transparent;
-      padding: 0.62rem 0.68rem 0.62rem 0.42rem;
-      font-family: "DM Mono", monospace;
-      font-size: 0.82rem;
-    }
-
-    .ledger-result {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-      background:
-        radial-gradient(circle at 78% 10%, rgba(240, 196, 90, 0.12), transparent 10rem),
-        rgba(15, 48, 45, 0.72);
-    }
-
-    .ledger-status {
-      display: inline-flex;
-      align-items: center;
-      align-self: flex-start;
-      gap: 0.45rem;
-      padding: 0.42rem 0.62rem;
-      border: 1px solid rgba(140, 221, 176, 0.34);
-      border-radius: 999px;
-      color: var(--green);
-      background: rgba(140, 221, 176, 0.08);
-      font-family: "DM Mono", monospace;
-      font-size: 0.64rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .ledger-status.is-unbalanced {
-      border-color: rgba(240, 196, 90, 0.5);
-      color: var(--gold-soft);
-      background: rgba(240, 196, 90, 0.1);
-    }
-
-    .ledger-status i {
-      font-size: 0.64rem;
-    }
-
-    .ledger-result strong {
-      display: block;
-      margin-top: 1rem;
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.6rem, 3vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.045em;
-      line-height: 1;
-    }
-
-    .ledger-result p {
-      margin-top: 0.55rem;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .ledger-reset {
-      align-self: flex-start;
-      padding: 0;
-      color: var(--gold-soft);
-      background: transparent;
-      cursor: pointer;
-      font-family: "DM Mono", monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .ledger-reset:hover {
-      color: var(--green);
-    }
-
-    .achievement-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-    }
-
-    .achievement {
-      padding: 1.65rem;
-      border-right: 1px solid var(--line);
-      background: rgba(14, 42, 40, 0.42);
-    }
-
-    .achievement:last-child {
-      border-right: 0;
-    }
-
-    .achievement i {
-      color: var(--gold);
-    }
-
-    .achievement h3 {
-      margin-top: 1.4rem;
-      font-size: 1rem;
-    }
-
-    .achievement p {
-      margin-top: 0.42rem;
-      color: var(--muted);
-      font-size: 0.87rem;
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
-      gap: clamp(2rem, 8vw, 7rem);
-      padding: clamp(2rem, 5vw, 4.6rem);
-      border: 1px solid rgba(240, 196, 90, 0.25);
-      border-radius: 1.35rem;
-      background:
-        radial-gradient(circle at 5% 15%, rgba(240, 196, 90, 0.16), transparent 16rem),
-        radial-gradient(circle at 90% 80%, rgba(89, 196, 142, 0.16), transparent 18rem),
-        rgba(13, 39, 38, 0.74);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel h2 {
-      font-size: clamp(2.7rem, 5.7vw, 5rem);
-    }
-
-    .contact-panel p {
-      max-width: 25rem;
-      margin-top: 1.25rem;
-      color: var(--muted);
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 0.75rem;
-      margin-top: 2rem;
-      font-family: "DM Mono", monospace;
-      font-size: 0.75rem;
-    }
-
-    .contact-details a {
-      color: var(--gold-soft);
-      transition: color 0.2s ease;
-    }
-
-    .contact-details a:hover {
-      color: var(--green);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 1rem;
-      align-content: start;
-    }
-
-    .field {
-      display: grid;
-      gap: 0.48rem;
-    }
-
-    .field label {
-      color: var(--muted);
-      font-family: "DM Mono", monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 0.7rem;
-      outline: none;
-      color: var(--ink);
-      background: rgba(3, 20, 19, 0.34);
-      padding: 0.82rem 0.9rem;
-      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      resize: vertical;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      border-color: rgba(240, 196, 90, 0.7);
-      background: rgba(3, 20, 19, 0.55);
-      box-shadow: 0 0 0 4px rgba(240, 196, 90, 0.09);
-    }
-
-    .form-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 0.2rem;
-    }
-
-    .form-status {
-      min-height: 1.4rem;
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-
-    .socials a {
-      display: grid;
-      width: 2.55rem;
-      height: 2.55rem;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--muted);
-      transition: color 0.22s ease, border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
-    }
-
-    .socials a:hover {
-      border-color: var(--gold);
-      color: var(--gold-soft);
-      background: rgba(240, 196, 90, 0.09);
-      transform: translateY(-3px);
-    }
-
-    .site-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 2rem 0 2.6rem;
-      color: rgba(175, 195, 189, 0.7);
-      font-family: "DM Mono", monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.04em;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.72s ease, transform 0.72s ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    body.light {
-      --ink: #15322f;
-      --muted: #59746d;
-      --background: #f0f7ee;
-      --background-deep: #fbfaf2;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --line: rgba(33, 94, 75, 0.16);
-      --shadow: 0 24px 60px rgba(33, 73, 61, 0.12);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(112, 203, 152, 0.2), transparent 30rem),
-        radial-gradient(circle at 92% 24%, rgba(240, 196, 90, 0.2), transparent 28rem),
-        linear-gradient(135deg, #fbfaf2, #edf6ef 52%, #f6f5e9);
-    }
-
-    body.light::before {
-      background-image:
-        linear-gradient(rgba(28, 104, 76, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(28, 104, 76, 0.07) 1px, transparent 1px);
-    }
-
-    body.light .site-header.is-scrolled {
-      background: rgba(251, 250, 242, 0.75);
-    }
-
-    body.light .wordmark,
-    body.light .button-ghost {
-      color: var(--ink);
-    }
-
-    body.light .portrait-frame {
-      border-color: rgba(21, 50, 47, 0.24);
-    }
-
-    body.light .portrait-tag,
-    body.light .skill-card,
-    body.light .journey-aside,
-    body.light .work-card,
-    body.light .achievement,
-    body.light .contact-panel {
-      background-color: rgba(255, 255, 255, 0.72);
-    }
-
-    body.light .portrait-tag {
-      background: rgba(255, 255, 255, 0.82);
-    }
-
-    body.light .portrait-frame::after {
-      background: linear-gradient(180deg, transparent 45%, rgba(255, 255, 255, 0.08));
-    }
-
-    body.light .work-tags span,
-    body.light .field input,
-    body.light .field textarea {
-      background: rgba(255, 255, 255, 0.64);
-    }
-
-    body.light .ledger-lab {
-      background:
-        linear-gradient(135deg, rgba(240, 196, 90, 0.16), transparent 40%),
-        linear-gradient(325deg, rgba(89, 196, 142, 0.12), transparent 36%),
-        rgba(255, 255, 255, 0.73);
-    }
-
-    body.light .ledger-fields,
-    body.light .ledger-result {
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    body.light .ledger-input {
-      background: rgba(255, 255, 255, 0.82);
-    }
-
-    body.light .field input:focus,
-    body.light .field textarea:focus {
-      background: #fff;
-    }
-
-    body.light .site-footer {
-      color: rgba(42, 80, 71, 0.72);
-    }
-
-    @media (max-width: 860px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero,
-      .manifesto,
-      .journey-layout,
-      .contact-panel,
-      .ledger-workspace {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 9.2rem;
-      }
-
-      .hero-copy {
-        text-align: center;
-      }
-
-      .eyebrow,
-      .hero-actions,
-      .hero-notes {
-        justify-content: center;
-      }
-
-      .hero-intro {
-        margin-inline: auto;
-      }
-
-      .portrait-stage {
-        width: min(100%, 380px);
-      }
-
-      .scroll-cue {
-        display: none;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-copy {
-        margin-top: 1rem;
-      }
-
-      .manifesto-statement {
-        position: static;
-      }
-
-      .skill-rail,
-      .achievement-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .skill-card,
-      .achievement {
-        min-height: 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .skill-card:last-child,
-      .achievement:last-child {
-        border-bottom: 0;
-      }
-
-      .work-card.featured,
-      .work-card.compact {
-        grid-column: span 12;
-      }
-
-      .journey-aside {
-        max-width: 38rem;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .shell {
-        width: min(100% - 2rem, 1180px);
-      }
-
-      .nav {
-        min-height: 66px;
-      }
-
-      .wordmark {
-        font-size: 0.8rem;
-      }
-
-      .wordmark-mark {
-        width: 1.7rem;
-        height: 1.7rem;
-      }
-
-      .hero {
-        padding-top: 7.9rem;
-        padding-bottom: 3.4rem;
-      }
-
-      h1 {
-        font-size: clamp(3rem, 16vw, 4.4rem);
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .button {
-        width: min(100%, 20rem);
-      }
-
-      .portrait-tag {
-        right: -1%;
-        bottom: 7%;
-      }
-
-      .section {
-        padding: 4.6rem 0;
-      }
-
-      .timeline {
-        padding-left: 2.2rem;
-      }
-
-      .timeline-item::before {
-        left: -2.56rem;
-      }
-
-      .contact-panel {
-        padding: 1.35rem;
-        border-radius: 1rem;
-      }
-
-      .site-footer {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Shreyansh Raj Agrahari | Finance + Technology</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shreyansh Raj Agrahari",
+      "description": "CA student combining accounting discipline with technology curiosity.",
+      "email": "mailto:webbershreyansh@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
+      "sameAs": [
+        "https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376",
+        "https://github.com/webber-shreysnshr",
+        "https://x.com/3535shreyansh"
+      ]
+    }
+  </script>
 </head>
 <body>
+  <div class="page-loader" aria-hidden="true"><span>SR</span></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <canvas class="particle-field" id="particleField" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
   <header class="site-header" id="top">
-    <div class="shell nav">
+    <div class="nav-shell">
       <a class="wordmark" href="#top" aria-label="Back to top">
         <span class="wordmark-mark">SR</span>
         <span>Shreyansh</span>
@@ -1435,445 +56,156 @@
         <a href="#about">Profile</a>
         <a href="#journey">Journey</a>
         <a href="#work">Work</a>
+        <a href="#ledger-lab">Ledger Lab</a>
         <a href="#contact">Connect</a>
       </nav>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
-        <i class="fa-solid fa-sun" aria-hidden="true"></i>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="sr-only">Open navigation</span><span></span><span></span>
+        </button>
+      </div>
     </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#about">Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="#journey">Journey <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="#work">Work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="#ledger-lab">Ledger Lab <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="#contact">Connect <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </nav>
   </header>
 
   <main>
-    <section class="shell hero">
-      <div class="hero-copy reveal is-visible">
-        <p class="eyebrow">CA student / ICAI curriculum</p>
-        <h1>Reading the <em>numbers.</em><br>Building the future.</h1>
-        <p class="hero-intro">
-          I am Shreyansh Raj Agrahari, a CA student at Academy of Commerce CA, Kathmandu. I am developing disciplined financial thinking and pairing it with a genuine curiosity for technology.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#journey">
-            Explore my journey
-            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
-          </a>
-          <a class="button button-ghost" href="portfoliocv.pdf" download>
-            Download CV
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </a>
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow hero-reveal"><span class="status-dot"></span>CA student / ICAI curriculum</p>
+        <h1 id="hero-title" class="hero-title" aria-label="Finance clarity. Technology curiosity.">
+          <span class="hero-line">Finance <em>clarity.</em></span>
+          <span class="hero-line">Technology <span class="outline-text">curiosity.</span></span>
+        </h1>
+        <p class="hero-intro hero-reveal">I am Shreyansh Raj Agrahari — a CA student in Kathmandu, bringing structured financial thinking and a builder's mindset to every new challenge.</p>
+        <p class="type-line hero-reveal"><span class="type-prompt">&gt;</span> <span id="typewriter" aria-live="polite"></span><span class="type-caret" aria-hidden="true"></span></p>
+        <div class="hero-actions hero-reveal">
+          <a class="button button-primary magnetic" href="#work"><span>Explore my work</span><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          <a class="button button-ghost magnetic" href="#contact"><span>Start a conversation</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
         </div>
-        <div class="hero-notes">
-          <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Kathmandu, Nepal</span>
-          <span><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Finance + technology</span>
-        </div>
+        <dl class="hero-facts hero-reveal">
+          <div><dt>Based in</dt><dd><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Kathmandu, Nepal</dd></div>
+          <div><dt>Focused on</dt><dd><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Finance + technology</dd></div>
+        </dl>
       </div>
 
-      <div class="portrait-stage reveal is-visible" style="transition-delay: 120ms">
-        <div class="portrait-frame">
+      <div class="hero-visual hero-reveal" id="heroVisual">
+        <div class="orb orb-one" aria-hidden="true"></div><div class="orb orb-two" aria-hidden="true"></div>
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <div class="portrait-card" id="portraitCard">
+          <div class="portrait-shine" aria-hidden="true"></div>
           <img src="profile1.png" alt="Portrait of Shreyansh Raj Agrahari">
+          <div class="portrait-grid" aria-hidden="true"></div>
         </div>
-        <div class="portrait-tag">
-          <strong>Current track</strong>
-          <span>CA / ICAI curriculum</span>
-        </div>
+        <div class="floating-card card-track"><span>Current track</span><strong>CA / ICAI</strong><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div>
+        <div class="floating-card card-signal"><span class="signal-dot"></span><strong>Building in public</strong></div>
       </div>
-      <div class="scroll-cue">
-        <span>Scroll to explore</span>
-        <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+      <a class="scroll-cue" href="#about"><span>Scroll to explore</span><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="marquee" aria-label="Areas of interest">
+      <div class="marquee-track">
+        <div class="marquee-content"><span>Accounting</span><i class="fa-solid fa-diamond"></i><span>Finance</span><i class="fa-solid fa-diamond"></i><span>Audit</span><i class="fa-solid fa-diamond"></i><span>Business Law</span><i class="fa-solid fa-diamond"></i><span>Technology</span><i class="fa-solid fa-diamond"></i><span>Analytical Thinking</span><i class="fa-solid fa-diamond"></i></div>
+        <div class="marquee-content" aria-hidden="true"><span>Accounting</span><i class="fa-solid fa-diamond"></i><span>Finance</span><i class="fa-solid fa-diamond"></i><span>Audit</span><i class="fa-solid fa-diamond"></i><span>Business Law</span><i class="fa-solid fa-diamond"></i><span>Technology</span><i class="fa-solid fa-diamond"></i><span>Analytical Thinking</span><i class="fa-solid fa-diamond"></i></div>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <div class="ticker-group">
-          <span>Accounting</span><i class="fa-solid fa-diamond"></i>
-          <span>Finance</span><i class="fa-solid fa-diamond"></i>
-          <span>Audit</span><i class="fa-solid fa-diamond"></i>
-          <span>Business Law</span><i class="fa-solid fa-diamond"></i>
-          <span>Technology</span><i class="fa-solid fa-diamond"></i>
-          <span>Analytical Thinking</span><i class="fa-solid fa-diamond"></i>
-        </div>
-        <div class="ticker-group">
-          <span>Accounting</span><i class="fa-solid fa-diamond"></i>
-          <span>Finance</span><i class="fa-solid fa-diamond"></i>
-          <span>Audit</span><i class="fa-solid fa-diamond"></i>
-          <span>Business Law</span><i class="fa-solid fa-diamond"></i>
-          <span>Technology</span><i class="fa-solid fa-diamond"></i>
-          <span>Analytical Thinking</span><i class="fa-solid fa-diamond"></i>
-        </div>
-      </div>
-    </div>
-
-    <section class="section shell" id="about">
+    <section class="section shell" id="about" aria-labelledby="about-title">
       <div class="section-heading reveal">
-        <div>
-          <span class="section-kicker">01 / Profile</span>
-          <h2>Ambition, backed by discipline.</h2>
-        </div>
+        <div><span class="section-kicker">01 / Profile</span><h2 id="about-title">Ambition, backed by <em>discipline.</em></h2></div>
         <p class="section-copy">A focused CA journey with an eye on the digital tools shaping modern finance.</p>
       </div>
-
-      <div class="manifesto">
-        <p class="manifesto-statement reveal">"Good decisions begin with clear, honest numbers."</p>
-        <div class="manifesto-text reveal" style="transition-delay: 110ms">
-          <p>I am pursuing Chartered Accountancy through Academy of Commerce CA in Kathmandu under the ICAI curriculum. I enjoy learning the principles behind accounting, finance, auditing, economics, and business law.</p>
-          <p>My background in science and technology gives me another lens: I like structured thinking, problem solving, and the potential of digital tools to make financial work more useful and precise.</p>
+      <div class="profile-layout">
+        <aside class="profile-statement reveal"><span class="quote-mark">“</span><p>Good decisions begin with clear, honest numbers.</p><span class="quote-name">— My approach</span></aside>
+        <div class="profile-content reveal">
+          <p>I am pursuing Chartered Accountancy through Academy of Commerce CA in Kathmandu under the ICAI curriculum. I enjoy the principles behind accounting, finance, auditing, economics, and business law.</p>
+          <p>My background in science and technology gives me another lens: structured thinking, problem solving, and the potential for digital tools to make financial work more useful and precise.</p>
+          <div class="metric-grid" aria-label="Key profile metrics">
+            <article><strong data-count="3" data-suffix="+">0</strong><span>Core disciplines</span></article>
+            <article><strong data-count="5" data-suffix="+">0</strong><span>Areas of active study</span></article>
+            <article><strong data-count="100" data-suffix="%">0</strong><span>Curiosity</span></article>
+          </div>
         </div>
       </div>
-
-      <div class="skill-rail reveal">
-        <article class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div>
-          <h3>CA Foundation</h3>
-          <p>Accounting, economics, business mathematics, and logical reasoning.</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
-          <h3>Ethics & Law</h3>
-          <p>Learning the discipline and principles behind responsible business practice.</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
-          <h3>Digital Fluency</h3>
-          <p>HTML, CSS, JavaScript basics, Git, GitHub, and practical productivity tools.</p>
-        </article>
+      <div class="skills-grid">
+        <article class="skill-card reveal"><div class="skill-top"><div class="skill-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div><span class="skill-percent" data-progress="86">86%</span></div><h3>CA Foundation</h3><p>Accounting, economics, business mathematics, and logical reasoning.</p><div class="skill-meter"><span style="--skill: 86%"></span></div></article>
+        <article class="skill-card reveal"><div class="skill-top"><div class="skill-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div><span class="skill-percent" data-progress="78">78%</span></div><h3>Ethics & Law</h3><p>Learning the principles behind responsible business practice.</p><div class="skill-meter"><span style="--skill: 78%"></span></div></article>
+        <article class="skill-card reveal"><div class="skill-top"><div class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div><span class="skill-percent" data-progress="72">72%</span></div><h3>Digital Fluency</h3><p>HTML, CSS, JavaScript basics, Git, GitHub, and productivity tools.</p><div class="skill-meter"><span style="--skill: 72%"></span></div></article>
       </div>
     </section>
 
-    <section class="section shell" id="ledger-lab">
-      <div class="section-heading reveal">
-        <div>
-          <span class="section-kicker">02 / Ledger Lab</span>
-          <h2>Accounting, made tangible.</h2>
-        </div>
-        <p class="section-copy">A small interactive exercise based on the accounting equation. Change the numbers and see whether the balance sheet holds.</p>
-      </div>
-
-      <div class="ledger-lab reveal">
-        <div class="ledger-lab-head">
-          <div>
-            <span class="section-kicker">Try the equation</span>
-            <h3>A balance sheet must balance.</h3>
-          </div>
-          <span class="ledger-equation">Assets = Liabilities + Equity</span>
-        </div>
-
-        <div class="ledger-workspace">
-          <div class="ledger-fields">
-            <div class="ledger-field">
-              <label for="ledger-assets">Total assets<span>What the business owns</span></label>
-              <div class="ledger-input"><span>NPR</span><input id="ledger-assets" type="number" min="0" step="1000" value="100000"></div>
-            </div>
-            <div class="ledger-field">
-              <label for="ledger-liabilities">Total liabilities<span>What the business owes</span></label>
-              <div class="ledger-input"><span>NPR</span><input id="ledger-liabilities" type="number" min="0" step="1000" value="60000"></div>
-            </div>
-            <div class="ledger-field">
-              <label for="ledger-equity">Owner&apos;s equity<span>Owner&apos;s claim</span></label>
-              <div class="ledger-input"><span>NPR</span><input id="ledger-equity" type="number" min="0" step="1000" value="40000"></div>
-            </div>
-          </div>
-
-          <div class="ledger-result">
-            <div>
-              <span class="ledger-status" id="ledger-status"><i class="fa-solid fa-check" aria-hidden="true"></i>Balanced</span>
-              <strong id="ledger-total">NPR 100,000</strong>
-              <p id="ledger-message">Assets equal liabilities plus owner&apos;s equity.</p>
-            </div>
-            <button class="ledger-reset" id="ledger-reset" type="button">Reset example <i class="fa-solid fa-rotate-left" aria-hidden="true"></i></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="journey">
-      <div class="section-heading reveal">
-        <div>
-          <span class="section-kicker">03 / Education</span>
-          <h2>My learning ledger.</h2>
-        </div>
-        <p class="section-copy">Each stage has added a different kind of curiosity - from early learning, to science, to CA.</p>
-      </div>
-
+    <section class="section shell journey-section" id="journey" aria-labelledby="journey-title">
+      <div class="section-heading reveal"><div><span class="section-kicker">02 / Education</span><h2 id="journey-title">My learning <em>ledger.</em></h2></div><p class="section-copy">Every chapter adds a different kind of curiosity — from science, to code, to CA.</p></div>
       <div class="journey-layout">
-        <div class="timeline reveal">
-          <article class="timeline-item">
-            <span class="timeline-date">2067 - 2077</span>
-            <h3>Nursery - Grade 7</h3>
-            <p>Shree Siddhartha Vidya Mandir HSEB School, Kapilvastu</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">2081</span>
-            <h3>Secondary Education Examination (SEE)</h3>
-            <p>Horizon GBS School, Tilottama</p>
-          </article>
-          <article class="timeline-item">
-            <span class="timeline-date">2083 / Expected</span>
-            <h3>+2 Science (PCM) with Computer Science</h3>
-            <p>New Horizon College (HGBSS), Tilottama</p>
-          </article>
-          <article class="timeline-item is-current">
-            <span class="timeline-date">Current</span>
-            <h3>Chartered Accountancy (CA) - ICAI</h3>
-            <p>Academy of Commerce CA, Kathmandu. Building a foundation in accounting, finance, auditing, and business law.</p>
-          </article>
-        </div>
-
-        <aside class="journey-aside reveal" style="transition-delay: 120ms">
-          <span class="aside-label">Learning now</span>
-          <h3>Current areas of focus.</h3>
-          <ul class="learning-list">
-            <li><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>Accounting principles</li>
-            <li><i class="fa-solid fa-chart-pie" aria-hidden="true"></i>Financial statements</li>
-            <li><i class="fa-solid fa-gavel" aria-hidden="true"></i>Business law & ethics</li>
-            <li><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>Economics & business maths</li>
-            <li><i class="fa-solid fa-laptop-code" aria-hidden="true"></i>Web development & Git</li>
-          </ul>
-        </aside>
+        <ol class="timeline reveal">
+          <li class="timeline-item"><span class="timeline-date">2067 — 2077</span><h3>Nursery — Grade 7</h3><p>Shree Siddhartha Vidya Mandir HSEB School, Kapilvastu</p></li>
+          <li class="timeline-item"><span class="timeline-date">2081</span><h3>Secondary Education Examination</h3><p>Horizon GBS School, Tilottama</p></li>
+          <li class="timeline-item"><span class="timeline-date">2083 / Expected</span><h3>+2 Science (PCM) with Computer Science</h3><p>New Horizon College (HGBSS), Tilottama</p></li>
+          <li class="timeline-item current"><span class="timeline-date">Current</span><h3>Chartered Accountancy — ICAI</h3><p>Academy of Commerce CA, Kathmandu. Building a foundation in accounting, finance, auditing, and business law.</p></li>
+        </ol>
+        <aside class="focus-card reveal"><span class="section-kicker">In focus now</span><h3>Understanding how business moves.</h3><ul><li><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i> Accounting principles</li><li><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Financial statements</li><li><i class="fa-solid fa-gavel" aria-hidden="true"></i> Business law & ethics</li><li><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> Web development & Git</li></ul></aside>
       </div>
     </section>
 
-    <section class="section shell" id="work">
-      <div class="section-heading reveal">
-        <div>
-          <span class="section-kicker">04 / Work & Experiments</span>
-          <h2>Small projects. Serious curiosity.</h2>
-        </div>
-        <p class="section-copy">A collection of practical work that shows how I learn by making, testing, and explaining.</p>
-      </div>
-
-      <div class="work-grid">
-        <article class="work-card featured reveal">
-          <div class="work-meta">
-            <span>Science / Electronics</span>
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </div>
-          <h3>Renewable Energy Model</h3>
-          <p>A school science project demonstrating renewable energy concepts with basic electronics and recycled materials.</p>
-          <div class="work-tags">
-            <span>Physics</span>
-            <span>Basic Electronics</span>
-            <span>Prototype</span>
-          </div>
-        </article>
-
-        <article class="work-card compact reveal" style="transition-delay: 90ms">
-          <div class="work-meta">
-            <span>Programming</span>
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </div>
-          <h3>Python Calculator</h3>
-          <p>A compact calculator application built around fundamental arithmetic operations.</p>
-          <div class="work-tags">
-            <span>Python</span>
-            <span>Logic</span>
-          </div>
-        </article>
-
-        <article class="work-card compact reveal" style="transition-delay: 150ms">
-          <div class="work-meta">
-            <span>Web / Communication</span>
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-          </div>
-          <h3>School Event Website</h3>
-          <p>A responsive website presentation built to communicate an event clearly across device sizes.</p>
-          <div class="work-tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </article>
+    <section class="section shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal"><div><span class="section-kicker">03 / Work & Experiments</span><h2 id="work-title">Small projects. <em>Serious</em> curiosity.</h2></div><p class="section-copy">Practical work that shows how I learn by making, testing, and explaining.</p></div>
+      <div class="project-grid">
+        <a class="project-card project-featured reveal" href="projects/solar-scope/" target="_blank" rel="noopener noreferrer" aria-label="Open SolarScope project"><div class="project-screen renewable-screen"><div class="sun-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div><div class="energy-bars"><span></span><span></span><span></span><span></span></div><div class="solar-panel"></div></div><div class="project-info"><div class="project-meta"><span>Science / Electronics</span><span>View site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div><h3>SolarScope</h3><p>An interactive tool to estimate solar output and understand a renewable-energy model.</p><div class="project-tags"><span>Physics</span><span>JavaScript</span><span>Prototype</span></div></div></a>
+        <a class="project-card reveal" href="projects/fin-calc/" target="_blank" rel="noopener noreferrer" aria-label="Open FinCalc project"><div class="project-screen terminal-screen"><div class="terminal-dots"><i></i><i></i><i></i></div><code><span class="purple">def</span> <span class="gold-code">calculate</span>(a, b):<br>&nbsp;&nbsp;<span class="purple">return</span> a <span class="green-code">+</span> b<br><br><span class="muted-code"># Simple. Useful.</span></code></div><div class="project-info"><div class="project-meta"><span>Programming</span><span>View site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div><h3>FinCalc</h3><p>A clean, keyboard-friendly calculator for quick NPR calculations.</p><div class="project-tags"><span>JavaScript</span><span>Logic</span></div></div></a>
+        <a class="project-card reveal" href="projects/event-spark/" target="_blank" rel="noopener noreferrer" aria-label="Open EventSpark project"><div class="project-screen browser-screen"><div class="browser-chrome"><span></span><span></span><span></span><b></b></div><div class="browser-page"><i></i><strong>School Event</strong><small>Ideas worth showing up for.</small><em>Learn more</em></div></div><div class="project-info"><div class="project-meta"><span>Web / Communication</span><span>View site <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></div><h3>EventSpark</h3><p>A responsive event landing page with a schedule, registration form, and live RSVP state.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div></a>
       </div>
     </section>
 
-    <section class="section shell" id="achievements">
-      <div class="section-heading reveal">
-        <div>
-          <span class="section-kicker">05 / Milestones</span>
-          <h2>Proof of the habit.</h2>
+    <section class="section shell" id="ledger-lab" aria-labelledby="ledger-title">
+      <div class="section-heading reveal"><div><span class="section-kicker">04 / Ledger Lab</span><h2 id="ledger-title">Turn numbers into <em>insight.</em></h2></div><p class="section-copy">A hands-on financial dashboard. Adjust the inputs to see the balance sheet, profitability, and cash position respond.</p></div>
+      <div class="ledger-dashboard reveal">
+        <div class="dashboard-top"><div><span class="live-label"><i></i> Live model</span><h3>Finance control room</h3></div><div class="dashboard-actions"><button class="icon-button" id="downloadLedger" type="button" aria-label="Download Ledger Lab data as CSV" title="Download Excel-compatible CSV"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i></button><button class="icon-button" id="printLedger" type="button" aria-label="Print Ledger Lab as PDF" title="Save as PDF"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></button></div></div>
+        <div class="dashboard-layout">
+          <div class="model-inputs" aria-label="Financial inputs">
+            <div class="input-heading"><span>Financial inputs</span><button id="ledgerReset" type="button">Reset</button></div>
+            <label class="financial-field" for="ledgerAssets"><span>Assets<small>What the business owns</small></span><span class="currency-input">NPR <input id="ledgerAssets" type="number" min="0" step="1000" value="100000"></span></label>
+            <label class="financial-field" for="ledgerLiabilities"><span>Liabilities<small>What the business owes</small></span><span class="currency-input">NPR <input id="ledgerLiabilities" type="number" min="0" step="1000" value="60000"></span></label>
+            <label class="financial-field" for="ledgerEquity"><span>Owner's equity<small>Owner's claim</small></span><span class="currency-input">NPR <input id="ledgerEquity" type="number" min="0" step="1000" value="40000"></span></label>
+            <label class="financial-field" for="ledgerRevenue"><span>Monthly revenue<small>Income generated</small></span><span class="currency-input">NPR <input id="ledgerRevenue" type="number" min="0" step="1000" value="70000"></span></label>
+            <label class="financial-field" for="ledgerExpenses"><span>Monthly expenses<small>Costs incurred</small></span><span class="currency-input">NPR <input id="ledgerExpenses" type="number" min="0" step="1000" value="42000"></span></label>
+          </div>
+          <div class="dashboard-main">
+            <div class="model-status" id="ledgerStatus"><i class="fa-solid fa-check" aria-hidden="true"></i><span>Balance sheet reconciled</span></div>
+            <div class="finance-metrics"><article><span>Net profit</span><strong id="profitValue">NPR 28,000</strong><small id="profitNote">40.0% margin</small></article><article><span>Financial position</span><strong id="positionValue">NPR 100,000</strong><small>assets recorded</small></article><article><span>Solvency ratio</span><strong id="solvencyValue">1.67x</strong><small>assets / liabilities</small></article></div>
+            <div class="chart-panel"><div class="chart-heading"><div><span>Cash flow overview</span><small>Monthly operating view</small></div><span class="chart-period">CURRENT</span></div><div class="cash-chart" aria-label="Bar chart comparing revenue, expenses and profit"><div class="chart-line line-one"></div><div class="chart-line line-two"></div><div class="chart-line line-three"></div><div class="chart-columns"><div><span class="bar revenue-bar" id="revenueBar"></span><b>Revenue</b></div><div><span class="bar expenses-bar" id="expensesBar"></span><b>Expenses</b></div><div><span class="bar profit-bar" id="profitBar"></span><b>Profit</b></div></div></div><div class="chart-key"><span><i class="key-revenue"></i>Revenue</span><span><i class="key-expenses"></i>Expenses</span><span><i class="key-profit"></i>Profit</span></div></div>
+          </div>
         </div>
-      </div>
-
-      <div class="achievement-strip reveal">
-        <article class="achievement">
-          <i class="fa-solid fa-medal" aria-hidden="true"></i>
-          <h3>Math Olympiad Winner</h3>
-          <p>Secured first place in a school-level Math Olympiad.</p>
-        </article>
-        <article class="achievement">
-          <i class="fa-solid fa-award" aria-hidden="true"></i>
-          <h3>Science Exhibition Award</h3>
-          <p>Received Best Project Award for an innovative physics model.</p>
-        </article>
-        <article class="achievement">
-          <i class="fa-solid fa-trophy" aria-hidden="true"></i>
-          <h3>Coding Competition</h3>
-          <p>Participated in and received a certificate from a regional coding challenge.</p>
-        </article>
+        <p class="dashboard-note" id="ledgerMessage" aria-live="polite">Assets equal liabilities plus owner's equity. The position is balanced.</p>
       </div>
     </section>
 
-    <section class="section shell" id="contact">
-      <div class="contact-panel reveal">
-        <div>
-          <span class="section-kicker">06 / Contact</span>
-          <h2>Let&apos;s start a conversation.</h2>
-          <p>Whether it is about CA, finance, technology, or an idea worth discussing, I&apos;d be glad to hear from you.</p>
-          <div class="contact-details">
-            <a href="mailto:ca@shreyanshrajagrahari.com.np">ca@shreyanshrajagrahari.com.np</a>
-            <span>Kathmandu, Nepal</span>
-          </div>
-          <div class="socials" aria-label="Social links">
-            <a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-            <a href="https://github.com/webber-shreysnshr" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/shreyanshrajagrahari?igsh=OGIxNHU1Z2dxbTVs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://x.com/3535shreyansh" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-          </div>
-        </div>
+    <section class="section shell" id="achievements" aria-labelledby="achievement-title">
+      <div class="section-heading reveal"><div><span class="section-kicker">05 / Milestones</span><h2 id="achievement-title">Proof of the <em>habit.</em></h2></div></div>
+      <div class="achievement-grid">
+        <article class="achievement-card reveal"><span class="achievement-number">01</span><i class="fa-solid fa-medal" aria-hidden="true"></i><h3>Math Olympiad Winner</h3><p>Secured first place in a school-level Math Olympiad.</p></article>
+        <article class="achievement-card reveal"><span class="achievement-number">02</span><i class="fa-solid fa-atom" aria-hidden="true"></i><h3>Science Exhibition Award</h3><p>Received Best Project Award for an innovative physics model.</p></article>
+        <article class="achievement-card reveal"><span class="achievement-number">03</span><i class="fa-solid fa-code" aria-hidden="true"></i><h3>Coding Competition</h3><p>Received a certificate from a regional coding challenge.</p></article>
+      </div>
+    </section>
 
-        <form class="contact-form" id="contact-form">
-          <div class="field">
-            <label for="from_name">Your name</label>
-            <input id="from_name" type="text" name="from_name" placeholder="How should I address you?" required>
-          </div>
-          <div class="field">
-            <label for="from_email">Your email</label>
-            <input id="from_email" type="email" name="from_email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="message">Your message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
-          </div>
-          <div class="form-bottom">
-            <button class="button button-primary" type="submit">Send message <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
-            <p class="form-status" id="form-status" aria-live="polite"></p>
-          </div>
-        </form>
+    <section class="section shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel reveal"><div class="contact-copy"><span class="section-kicker">06 / Contact</span><h2 id="contact-title">Let’s make a smart connection.</h2><p>Whether it is about CA, finance, technology, or an idea worth discussing, I’d be glad to hear from you.</p><a class="email-link" href="mailto:webbershreyansh@gmail.com">webbershreyansh@gmail.com <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a><div class="socials" aria-label="Social links"><a href="https://linkedin.com/in/shreyansh-raj-agrahari-a3ab4a376" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a><a href="https://github.com/webber-shreysnshr" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a><a href="https://www.instagram.com/shreyanshrajagrahari?igsh=OGIxNHU1Z2dxbTVs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a><a href="https://x.com/3535shreyansh" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></div></div>
+        <form class="contact-form" id="contactForm" novalidate><div class="field"><label for="from_name">Your name</label><input id="from_name" name="from_name" type="text" autocomplete="name" placeholder="How should I address you?" required><small class="field-error" id="nameError"></small></div><div class="field"><label for="from_email">Your email</label><input id="from_email" name="from_email" type="email" autocomplete="email" placeholder="you@example.com" required><small class="field-error" id="emailError"></small></div><div class="field"><label for="message">Your message</label><textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea><small class="field-error" id="messageError"></small></div><div class="form-bottom"><button class="button button-primary magnetic" type="submit"><span>Send message</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button><p class="form-status" id="formStatus" aria-live="polite"></p></div></form>
       </div>
     </section>
   </main>
 
-  <footer class="shell site-footer">
-    <span>&copy; 2026 Shreyansh Raj Agrahari</span>
-    <span>Designed around focus, growth, and good numbers.</span>
-  </footer>
+  <footer class="site-footer"><div class="footer-wave" aria-hidden="true"></div><div class="shell footer-content"><div><a class="wordmark" href="#top"><span class="wordmark-mark">SR</span><span>Shreyansh</span></a><p>Built with focus, growth, and good numbers.</p></div><div class="footer-meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Kathmandu, Nepal</span><span><i class="fa-regular fa-clock" aria-hidden="true"></i> <time id="nepalTime">--:--</time> NPT</span><span>© <span id="footerYear">2026</span></span></div></div></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-    const header = document.querySelector(".site-header");
-    const form = document.getElementById("contact-form");
-    const statusElement = document.getElementById("form-status");
-
-    const updateThemeToggle = () => {
-      const isLight = document.body.classList.contains("light");
-      themeToggle.innerHTML = isLight
-        ? '<i class="fa-solid fa-moon" aria-hidden="true"></i>'
-        : '<i class="fa-solid fa-sun" aria-hidden="true"></i>';
-      themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
-    };
-
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      updateThemeToggle();
-    });
-
-    const updateHeader = () => {
-      header.classList.toggle("is-scrolled", window.scrollY > 16);
-    };
-
-    window.addEventListener("scroll", updateHeader, { passive: true });
-    updateHeader();
-
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    document.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
-      revealObserver.observe(element);
-    });
-
-    const ledgerAssets = document.getElementById("ledger-assets");
-    const ledgerLiabilities = document.getElementById("ledger-liabilities");
-    const ledgerEquity = document.getElementById("ledger-equity");
-    const ledgerStatus = document.getElementById("ledger-status");
-    const ledgerTotal = document.getElementById("ledger-total");
-    const ledgerMessage = document.getElementById("ledger-message");
-    const ledgerReset = document.getElementById("ledger-reset");
-
-    if (ledgerAssets && ledgerLiabilities && ledgerEquity) {
-      const defaults = { assets: 100000, liabilities: 60000, equity: 40000 };
-      const currency = new Intl.NumberFormat("en-NP", { maximumFractionDigits: 0 });
-
-      const updateLedger = () => {
-        const assets = Number(ledgerAssets.value) || 0;
-        const liabilities = Number(ledgerLiabilities.value) || 0;
-        const equity = Number(ledgerEquity.value) || 0;
-        const difference = assets - liabilities - equity;
-        const isBalanced = Math.abs(difference) < 0.01;
-
-        ledgerTotal.textContent = `NPR ${currency.format(assets)}`;
-        ledgerStatus.classList.toggle("is-unbalanced", !isBalanced);
-        ledgerStatus.innerHTML = isBalanced
-          ? '<i class="fa-solid fa-check" aria-hidden="true"></i>Balanced'
-          : '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Needs adjustment';
-        ledgerMessage.textContent = isBalanced
-          ? "Assets equal liabilities plus owner\'s equity."
-          : `Difference: NPR ${currency.format(Math.abs(difference))}. Adjust the values to balance the equation.`;
-      };
-
-      [ledgerAssets, ledgerLiabilities, ledgerEquity].forEach((input) => {
-        input.addEventListener("input", updateLedger);
-      });
-
-      ledgerReset.addEventListener("click", () => {
-        ledgerAssets.value = defaults.assets;
-        ledgerLiabilities.value = defaults.liabilities;
-        ledgerEquity.value = defaults.equity;
-        updateLedger();
-      });
-
-      updateLedger();
-    }
-
-    if (window.emailjs) {
-      emailjs.init("7Jo_3LJgp6PY9gz8g");
-    }
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const submitButton = form.querySelector('button[type="submit"]');
-      const defaultLabel = submitButton.innerHTML;
-
-      if (!window.emailjs) {
-        statusElement.textContent = "Email service is unavailable. Please email me directly.";
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-      statusElement.textContent = "Sending your message...";
-
-      emailjs.sendForm("service_y9waaf6", "template_tkorcow", form)
-        .then(() => {
-          form.reset();
-          statusElement.textContent = "Message sent successfully. Thank you.";
-        })
-        .catch(() => {
-          statusElement.textContent = "Message could not be sent. Please try again or email me directly.";
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.innerHTML = defaultLabel;
-        });
-    });
-  </script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

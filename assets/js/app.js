@@ -5,6 +5,10 @@ const themeToggle = document.getElementById("themeToggle");
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const lowPowerMode = window.matchMedia("(max-width: 760px), (pointer: coarse)").matches;
+const shouldReduceAnimations = reduceMotion || lowPowerMode;
+
+body.classList.toggle("low-power", lowPowerMode);
 
 const setThemeToggle = () => {
   const isLight = body.classList.contains("light");
@@ -78,7 +82,7 @@ let characterIndex = 0;
 let deleting = false;
 
 const runTypewriter = () => {
-  if (reduceMotion) {
+  if (shouldReduceAnimations) {
     typewriter.textContent = typePhrases[0];
     return;
   }
@@ -100,7 +104,7 @@ runTypewriter();
 
 document.querySelectorAll(".magnetic").forEach((element) => {
   element.addEventListener("mousemove", (event) => {
-    if (reduceMotion) return;
+    if (shouldReduceAnimations) return;
     const bounds = element.getBoundingClientRect();
     const x = (event.clientX - bounds.left - bounds.width / 2) * 0.12;
     const y = (event.clientY - bounds.top - bounds.height / 2) * 0.17;
@@ -111,7 +115,7 @@ document.querySelectorAll(".magnetic").forEach((element) => {
 
 const portraitCard = document.getElementById("portraitCard");
 const heroVisual = document.getElementById("heroVisual");
-if (portraitCard && heroVisual && !reduceMotion) {
+if (portraitCard && heroVisual && !shouldReduceAnimations) {
   heroVisual.addEventListener("mousemove", (event) => {
     const bounds = heroVisual.getBoundingClientRect();
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
@@ -124,7 +128,7 @@ if (portraitCard && heroVisual && !reduceMotion) {
 }
 
 const cursorGlow = document.getElementById("cursorGlow");
-if (window.matchMedia("(hover: hover)").matches && !reduceMotion) {
+if (window.matchMedia("(hover: hover)").matches && !shouldReduceAnimations) {
   body.classList.add("has-pointer");
   window.addEventListener("pointermove", (event) => {
     cursorGlow.style.left = `${event.clientX}px`;
@@ -153,7 +157,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach((counter) => counterObserver.observe(counter));
 
 const particleCanvas = document.getElementById("particleField");
-if (particleCanvas && !reduceMotion) {
+if (particleCanvas && !shouldReduceAnimations) {
   const context = particleCanvas.getContext("2d");
   let particles = [];
   let canvasWidth = 0;

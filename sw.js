@@ -1,5 +1,5 @@
-const CACHE_NAME = "shreyansh-portfolio-v2";
-const APP_SHELL = ["./", "portfolio.html", "assets/css/style.css", "assets/js/app.js", "profile1.png"];
+const CACHE_NAME = "shreyansh-portfolio-v7";
+const APP_SHELL = ["./", "index.html", "portfolio.html", "assets/css/style.css", "assets/js/app.js", "profile1.png", "projects/club-os/index.html", "projects/robot-route/index.html", "projects/orbit-lab/index.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));

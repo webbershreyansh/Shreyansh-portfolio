@@ -324,5 +324,88 @@ document.getElementById("footerYear").textContent = new Date().getFullYear();
 updateNepalTime();
 window.setInterval(updateNepalTime, 30000);
 
+const chatLauncher = document.getElementById("chatLauncher");
+const chatBot = document.getElementById("chatBot");
+const chatClose = document.getElementById("chatClose");
+const chatMessages = document.getElementById("chatMessages");
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+
+if (chatLauncher && chatBot && chatClose && chatMessages && chatForm && chatInput) {
+  const setChatOpen = (isOpen) => {
+    chatBot.classList.toggle("is-open", isOpen);
+    chatBot.setAttribute("aria-hidden", String(!isOpen));
+    chatLauncher.setAttribute("aria-expanded", String(isOpen));
+    if (isOpen) window.setTimeout(() => chatInput.focus(), 180);
+  };
+
+  const getAssistantReply = (question) => {
+    const message = question.toLowerCase();
+    if (/hello|hi|hey|namaste/.test(message)) return "Hello! Ask me about Shreyansh’s CA journey, current skills, projects, or how to get in touch.";
+    if (/study|studying|education|ca |icai|college|school|journey/.test(message)) return "Shreyansh is pursuing Chartered Accountancy through Academy of Commerce CA in Kathmandu under the ICAI curriculum, building a foundation in accounting, finance, audit, and business law.";
+    if (/skill|technology|code|programming|html|css|javascript|python/.test(message)) return "His strengths combine CA Foundation topics, ethics and business law, plus practical HTML, CSS, JavaScript, Git, GitHub, and productivity tools.";
+    if (/event|volunteer|club|treasurer|leadership|astro|robotics|scavenger/.test(message)) return "Shreyansh has 4+ years of IT club experience, including treasurer responsibilities. He has organised and volunteered across many student-led technical, academic, and community events; Astro Fest with NASO, robotics training, and the Horizon Scavenger Hunt are selected highlights.";
+    if (/project|work|build|portfolio|solar|calculator|clubos|robotroute|orbitlab|robotics|astronomy/.test(message)) return "The portfolio includes SolarScope, FinCalc, EventSpark, ClubOS for IT-club systems, RobotRoute for robotics logic, and OrbitLab for interactive astronomy learning. The last three are clearly marked concept prototypes.";
+    if (/contact|email|reach|hire|connect/.test(message)) return "You can email Shreyansh at ca@shreyanshrajagrahari.com.np or use the contact form. He is based in Kathmandu, Nepal.";
+    if (/location|where|kathmandu|nepal/.test(message)) return "Shreyansh is based in Kathmandu, Nepal.";
+    if (/resume|cv/.test(message)) return "The portfolio focuses on Shreyansh’s current work and learning journey. For an introduction or collaboration, the contact form is the best next step.";
+    return "I can help with Shreyansh’s CA journey, skills, projects, location, or contact details. What would you like to know?";
+  };
+
+  const addMessage = (content, role) => {
+    const message = document.createElement("div");
+    message.className = `chat-message ${role}`;
+    if (role === "bot") {
+      const icon = document.createElement("i");
+      icon.className = "fa-solid fa-sparkles";
+      icon.setAttribute("aria-hidden", "true");
+      message.append(icon);
+    }
+    const paragraph = document.createElement("p");
+    paragraph.textContent = content;
+    message.append(paragraph);
+    chatMessages.append(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  };
+
+  const getAiReply = async (question) => {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: question })
+    });
+    if (!response.ok) throw new Error("AI assistant is unavailable");
+    const data = await response.json();
+    if (typeof data.reply !== "string" || !data.reply.trim()) throw new Error("AI assistant returned no reply");
+    return data.reply.trim();
+  };
+
+  const answerQuestion = async (question) => {
+    const cleanedQuestion = question.trim();
+    if (!cleanedQuestion) return;
+    addMessage(cleanedQuestion, "user");
+    chatInput.value = "";
+    const typing = document.createElement("div");
+    typing.className = "chat-message bot typing";
+    typing.innerHTML = '<i class="fa-solid fa-sparkles" aria-hidden="true"></i><p><b></b><b></b><b></b></p>';
+    chatMessages.append(typing);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    window.setTimeout(async () => {
+      typing.remove();
+      try {
+        addMessage(await getAiReply(cleanedQuestion), "bot");
+      } catch {
+        addMessage(getAssistantReply(cleanedQuestion), "bot");
+      }
+    }, shouldReduceAnimations ? 0 : 420);
+  };
+
+  chatLauncher.addEventListener("click", () => setChatOpen(!chatBot.classList.contains("is-open")));
+  chatClose.addEventListener("click", () => setChatOpen(false));
+  chatForm.addEventListener("submit", (event) => { event.preventDefault(); answerQuestion(chatInput.value); });
+  document.querySelectorAll("[data-prompt]").forEach((button) => button.addEventListener("click", () => answerQuestion(button.dataset.prompt)));
+  window.addEventListener("keydown", (event) => { if (event.key === "Escape" && chatBot.classList.contains("is-open")) setChatOpen(false); });
+}
+
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 window.addEventListener("load", () => { body.classList.add("is-ready"); });
